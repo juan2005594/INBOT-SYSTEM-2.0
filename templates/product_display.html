@@ -283,11 +283,22 @@
                 return cookieValue;
             }
 
+            const token = localStorage.getItem('authToken');
+            function getAuthHeaders(extraHeaders = {}) {
+                const headers = { ...extraHeaders };
+                if (token) {
+                    headers['Authorization'] = `Token ${token}`;
+                }
+                return headers;
+            }
+
             // Función para cargar categorías y proveedores
             async function loadForeignKeys() {
                 try {
                     // Cargar categorías
-                    const categoriasResponse = await fetch('/core-api/categorias/');
+                    const categoriasResponse = await fetch('/core-api/categorias/', {
+                        headers: getAuthHeaders()
+                    });
                     const categoriasData = await categoriasResponse.json();
                     if (categoriasData.results) {
                         categoriasData.results.forEach(cat => {
@@ -299,7 +310,9 @@
                     }
 
                     // Cargar proveedores
-                    const proveedoresResponse = await fetch('/core-api/proveedores/');
+                    const proveedoresResponse = await fetch('/core-api/proveedores/', {
+                        headers: getAuthHeaders()
+                    });
                     const proveedoresData = await proveedoresResponse.json();
                     if (proveedoresData.results) {
                         proveedoresData.results.forEach(prov => {
@@ -325,7 +338,9 @@
                     let page = 1;
                     
                     while (true) {
-                        const response = await fetch(`${apiURL}?page=${page}&format=json`);
+                        const response = await fetch(`${apiURL}?page=${page}&format=json`, {
+                            headers: getAuthHeaders()
+                        });
                         if (!response.ok) {
                             throw new Error(`HTTP error! status: ${response.status}`);
                         }
@@ -406,10 +421,10 @@
                 try {
                     const response = await fetch(apiURL, {
                         method: 'POST',
-                        headers: {
+                        headers: getAuthHeaders({
                             'Content-Type': 'application/json',
                             'X-CSRFToken': csrfToken
-                        },
+                        }),
                         body: JSON.stringify(productData)
                     });
 

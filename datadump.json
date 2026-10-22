@@ -1,2670 +1,2732 @@
 [
-{
-  "model": "auth.group",
-  "fields": {
-    "name": "Vendedor",
-    "permissions": [
-      [
-        "add_detalleventa",
-        "api",
-        "detalleventa"
-      ],
-      [
-        "change_detalleventa",
-        "api",
-        "detalleventa"
-      ],
-      [
-        "delete_detalleventa",
-        "api",
-        "detalleventa"
-      ],
-      [
-        "view_detalleventa",
-        "api",
-        "detalleventa"
-      ],
-      [
-        "add_producto",
-        "api",
-        "producto"
-      ],
-      [
-        "change_producto",
-        "api",
-        "producto"
-      ],
-      [
-        "delete_producto",
-        "api",
-        "producto"
-      ],
-      [
-        "view_producto",
-        "api",
-        "producto"
-      ],
-      [
-        "add_venta",
-        "api",
-        "venta"
-      ],
-      [
-        "change_venta",
-        "api",
-        "venta"
-      ],
-      [
-        "delete_venta",
-        "api",
-        "venta"
-      ],
-      [
-        "view_venta",
-        "api",
-        "venta"
+  {
+    "model": "auth.group",
+    "fields": {
+      "name": "Vendedor",
+      "permissions": [
+        [
+          "add_detalleventa",
+          "api",
+          "detalleventa"
+        ],
+        [
+          "change_detalleventa",
+          "api",
+          "detalleventa"
+        ],
+        [
+          "delete_detalleventa",
+          "api",
+          "detalleventa"
+        ],
+        [
+          "view_detalleventa",
+          "api",
+          "detalleventa"
+        ],
+        [
+          "add_producto",
+          "api",
+          "producto"
+        ],
+        [
+          "change_producto",
+          "api",
+          "producto"
+        ],
+        [
+          "delete_producto",
+          "api",
+          "producto"
+        ],
+        [
+          "view_producto",
+          "api",
+          "producto"
+        ],
+        [
+          "add_venta",
+          "api",
+          "venta"
+        ],
+        [
+          "change_venta",
+          "api",
+          "venta"
+        ],
+        [
+          "delete_venta",
+          "api",
+          "venta"
+        ],
+        [
+          "view_venta",
+          "api",
+          "venta"
+        ]
       ]
-    ]
-  }
-},
-{
-  "model": "auth.group",
-  "fields": {
-    "name": "Administrador",
-    "permissions": [
-      [
-        "add_logentry",
-        "admin",
-        "logentry"
-      ],
-      [
-        "change_logentry",
-        "admin",
-        "logentry"
-      ],
-      [
-        "delete_logentry",
-        "admin",
-        "logentry"
-      ],
-      [
-        "view_logentry",
-        "admin",
-        "logentry"
-      ],
-      [
-        "add_categoria",
-        "api",
-        "categoria"
-      ],
-      [
-        "change_categoria",
-        "api",
-        "categoria"
-      ],
-      [
-        "delete_categoria",
-        "api",
-        "categoria"
-      ],
-      [
-        "view_categoria",
-        "api",
-        "categoria"
-      ],
-      [
-        "add_detallefacturacompra",
-        "api",
-        "detallefacturacompra"
-      ],
-      [
-        "change_detallefacturacompra",
-        "api",
-        "detallefacturacompra"
-      ],
-      [
-        "delete_detallefacturacompra",
-        "api",
-        "detallefacturacompra"
-      ],
-      [
-        "view_detallefacturacompra",
-        "api",
-        "detallefacturacompra"
-      ],
-      [
-        "add_detalleventa",
-        "api",
-        "detalleventa"
-      ],
-      [
-        "change_detalleventa",
-        "api",
-        "detalleventa"
-      ],
-      [
-        "delete_detalleventa",
-        "api",
-        "detalleventa"
-      ],
-      [
-        "view_detalleventa",
-        "api",
-        "detalleventa"
-      ],
-      [
-        "add_facturacompra",
-        "api",
-        "facturacompra"
-      ],
-      [
-        "change_facturacompra",
-        "api",
-        "facturacompra"
-      ],
-      [
-        "delete_facturacompra",
-        "api",
-        "facturacompra"
-      ],
-      [
-        "view_facturacompra",
-        "api",
-        "facturacompra"
-      ],
-      [
-        "add_item",
-        "api",
-        "item"
-      ],
-      [
-        "change_item",
-        "api",
-        "item"
-      ],
-      [
-        "delete_item",
-        "api",
-        "item"
-      ],
-      [
-        "view_item",
-        "api",
-        "item"
-      ],
-      [
-        "add_producto",
-        "api",
-        "producto"
-      ],
-      [
-        "change_producto",
-        "api",
-        "producto"
-      ],
-      [
-        "delete_producto",
-        "api",
-        "producto"
-      ],
-      [
-        "view_producto",
-        "api",
-        "producto"
-      ],
-      [
-        "add_proveedor",
-        "api",
-        "proveedor"
-      ],
-      [
-        "change_proveedor",
-        "api",
-        "proveedor"
-      ],
-      [
-        "delete_proveedor",
-        "api",
-        "proveedor"
-      ],
-      [
-        "view_proveedor",
-        "api",
-        "proveedor"
-      ],
-      [
-        "add_venta",
-        "api",
-        "venta"
-      ],
-      [
-        "change_venta",
-        "api",
-        "venta"
-      ],
-      [
-        "delete_venta",
-        "api",
-        "venta"
-      ],
-      [
-        "view_venta",
-        "api",
-        "venta"
-      ],
-      [
-        "add_group",
-        "auth",
-        "group"
-      ],
-      [
-        "change_group",
-        "auth",
-        "group"
-      ],
-      [
-        "delete_group",
-        "auth",
-        "group"
-      ],
-      [
-        "view_group",
-        "auth",
-        "group"
-      ],
-      [
-        "add_permission",
-        "auth",
-        "permission"
-      ],
-      [
-        "change_permission",
-        "auth",
-        "permission"
-      ],
-      [
-        "delete_permission",
-        "auth",
-        "permission"
-      ],
-      [
-        "view_permission",
-        "auth",
-        "permission"
-      ],
-      [
-        "add_user",
-        "auth",
-        "user"
-      ],
-      [
-        "change_user",
-        "auth",
-        "user"
-      ],
-      [
-        "delete_user",
-        "auth",
-        "user"
-      ],
-      [
-        "view_user",
-        "auth",
-        "user"
-      ],
-      [
-        "add_token",
-        "authtoken",
-        "token"
-      ],
-      [
-        "change_token",
-        "authtoken",
-        "token"
-      ],
-      [
-        "delete_token",
-        "authtoken",
-        "token"
-      ],
-      [
-        "view_token",
-        "authtoken",
-        "token"
-      ],
-      [
-        "add_tokenproxy",
-        "authtoken",
-        "tokenproxy"
-      ],
-      [
-        "change_tokenproxy",
-        "authtoken",
-        "tokenproxy"
-      ],
-      [
-        "delete_tokenproxy",
-        "authtoken",
-        "tokenproxy"
-      ],
-      [
-        "view_tokenproxy",
-        "authtoken",
-        "tokenproxy"
-      ],
-      [
-        "add_contenttype",
-        "contenttypes",
-        "contenttype"
-      ],
-      [
-        "change_contenttype",
-        "contenttypes",
-        "contenttype"
-      ],
-      [
-        "delete_contenttype",
-        "contenttypes",
-        "contenttype"
-      ],
-      [
-        "view_contenttype",
-        "contenttypes",
-        "contenttype"
-      ],
-      [
-        "add_session",
-        "sessions",
-        "session"
-      ],
-      [
-        "change_session",
-        "sessions",
-        "session"
-      ],
-      [
-        "delete_session",
-        "sessions",
-        "session"
-      ],
-      [
-        "view_session",
-        "sessions",
-        "session"
+    }
+  },
+  {
+    "model": "auth.group",
+    "fields": {
+      "name": "Administrador",
+      "permissions": [
+        [
+          "add_logentry",
+          "admin",
+          "logentry"
+        ],
+        [
+          "change_logentry",
+          "admin",
+          "logentry"
+        ],
+        [
+          "delete_logentry",
+          "admin",
+          "logentry"
+        ],
+        [
+          "view_logentry",
+          "admin",
+          "logentry"
+        ],
+        [
+          "add_categoria",
+          "api",
+          "categoria"
+        ],
+        [
+          "change_categoria",
+          "api",
+          "categoria"
+        ],
+        [
+          "delete_categoria",
+          "api",
+          "categoria"
+        ],
+        [
+          "view_categoria",
+          "api",
+          "categoria"
+        ],
+        [
+          "add_detallefacturacompra",
+          "api",
+          "detallefacturacompra"
+        ],
+        [
+          "change_detallefacturacompra",
+          "api",
+          "detallefacturacompra"
+        ],
+        [
+          "delete_detallefacturacompra",
+          "api",
+          "detallefacturacompra"
+        ],
+        [
+          "view_detallefacturacompra",
+          "api",
+          "detallefacturacompra"
+        ],
+        [
+          "add_detalleventa",
+          "api",
+          "detalleventa"
+        ],
+        [
+          "change_detalleventa",
+          "api",
+          "detalleventa"
+        ],
+        [
+          "delete_detalleventa",
+          "api",
+          "detalleventa"
+        ],
+        [
+          "view_detalleventa",
+          "api",
+          "detalleventa"
+        ],
+        [
+          "add_facturacompra",
+          "api",
+          "facturacompra"
+        ],
+        [
+          "change_facturacompra",
+          "api",
+          "facturacompra"
+        ],
+        [
+          "delete_facturacompra",
+          "api",
+          "facturacompra"
+        ],
+        [
+          "view_facturacompra",
+          "api",
+          "facturacompra"
+        ],
+        [
+          "add_item",
+          "api",
+          "item"
+        ],
+        [
+          "change_item",
+          "api",
+          "item"
+        ],
+        [
+          "delete_item",
+          "api",
+          "item"
+        ],
+        [
+          "view_item",
+          "api",
+          "item"
+        ],
+        [
+          "add_producto",
+          "api",
+          "producto"
+        ],
+        [
+          "change_producto",
+          "api",
+          "producto"
+        ],
+        [
+          "delete_producto",
+          "api",
+          "producto"
+        ],
+        [
+          "view_producto",
+          "api",
+          "producto"
+        ],
+        [
+          "add_proveedor",
+          "api",
+          "proveedor"
+        ],
+        [
+          "change_proveedor",
+          "api",
+          "proveedor"
+        ],
+        [
+          "delete_proveedor",
+          "api",
+          "proveedor"
+        ],
+        [
+          "view_proveedor",
+          "api",
+          "proveedor"
+        ],
+        [
+          "add_venta",
+          "api",
+          "venta"
+        ],
+        [
+          "change_venta",
+          "api",
+          "venta"
+        ],
+        [
+          "delete_venta",
+          "api",
+          "venta"
+        ],
+        [
+          "view_venta",
+          "api",
+          "venta"
+        ],
+        [
+          "add_group",
+          "auth",
+          "group"
+        ],
+        [
+          "change_group",
+          "auth",
+          "group"
+        ],
+        [
+          "delete_group",
+          "auth",
+          "group"
+        ],
+        [
+          "view_group",
+          "auth",
+          "group"
+        ],
+        [
+          "add_permission",
+          "auth",
+          "permission"
+        ],
+        [
+          "change_permission",
+          "auth",
+          "permission"
+        ],
+        [
+          "delete_permission",
+          "auth",
+          "permission"
+        ],
+        [
+          "view_permission",
+          "auth",
+          "permission"
+        ],
+        [
+          "add_user",
+          "auth",
+          "user"
+        ],
+        [
+          "change_user",
+          "auth",
+          "user"
+        ],
+        [
+          "delete_user",
+          "auth",
+          "user"
+        ],
+        [
+          "view_user",
+          "auth",
+          "user"
+        ],
+        [
+          "add_token",
+          "authtoken",
+          "token"
+        ],
+        [
+          "change_token",
+          "authtoken",
+          "token"
+        ],
+        [
+          "delete_token",
+          "authtoken",
+          "token"
+        ],
+        [
+          "view_token",
+          "authtoken",
+          "token"
+        ],
+        [
+          "add_tokenproxy",
+          "authtoken",
+          "tokenproxy"
+        ],
+        [
+          "change_tokenproxy",
+          "authtoken",
+          "tokenproxy"
+        ],
+        [
+          "delete_tokenproxy",
+          "authtoken",
+          "tokenproxy"
+        ],
+        [
+          "view_tokenproxy",
+          "authtoken",
+          "tokenproxy"
+        ],
+        [
+          "add_contenttype",
+          "contenttypes",
+          "contenttype"
+        ],
+        [
+          "change_contenttype",
+          "contenttypes",
+          "contenttype"
+        ],
+        [
+          "delete_contenttype",
+          "contenttypes",
+          "contenttype"
+        ],
+        [
+          "view_contenttype",
+          "contenttypes",
+          "contenttype"
+        ],
+        [
+          "add_session",
+          "sessions",
+          "session"
+        ],
+        [
+          "change_session",
+          "sessions",
+          "session"
+        ],
+        [
+          "delete_session",
+          "sessions",
+          "session"
+        ],
+        [
+          "view_session",
+          "sessions",
+          "session"
+        ]
       ]
-    ]
-  }
-},
-{
-  "model": "auth.user",
-  "fields": {
-    "password": "pbkdf2_sha256$720000$x8vatHPMqJHOW0YnLXfVz6$lXfDMYCCVAfN+OTSu86ypzT5czGDNXNCA0oMtg3+KxY=",
-    "last_login": "2025-06-11T17:20:04.112Z",
-    "is_superuser": true,
-    "username": "pablo",
-    "first_name": "",
-    "last_name": "",
-    "email": "",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2025-06-11T17:18:28.706Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "fields": {
-    "password": "pbkdf2_sha256$720000$d61TiS0S8058yrug6CI6EX$TXFqEzvwOL4aXVGvJBSf1az6DyN8/wjgcC3CWvHesGY=",
-    "last_login": "2025-06-11T17:38:54Z",
-    "is_superuser": false,
-    "username": "Administrador",
-    "first_name": "juan pablo",
-    "last_name": "sanchez rodriguez",
-    "email": "jpsanchezrodriguez@ucundinamarca.edu.co",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2025-06-11T17:24:02Z",
-    "groups": [
-      [
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$720000$x8vatHPMqJHOW0YnLXfVz6$lXfDMYCCVAfN+OTSu86ypzT5czGDNXNCA0oMtg3+KxY=",
+      "last_login": "2025-06-11T17:20:04.112Z",
+      "is_superuser": true,
+      "username": "pablo",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2025-06-11T17:18:28.706Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$720000$d61TiS0S8058yrug6CI6EX$TXFqEzvwOL4aXVGvJBSf1az6DyN8/wjgcC3CWvHesGY=",
+      "last_login": "2025-06-11T17:38:54Z",
+      "is_superuser": false,
+      "username": "Administrador",
+      "first_name": "juan pablo",
+      "last_name": "sanchez rodriguez",
+      "email": "jpsanchezrodriguez@ucundinamarca.edu.co",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2025-06-11T17:24:02Z",
+      "groups": [
+        [
+          "Administrador"
+        ]
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$720000$AIpyq9Tnkk1Eh8GZpnlRrt$oQQtoqCOdebG/OQ+TLCAenm7jMnxXyTfQsLaom6uBHc=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Vendedor",
+      "first_name": "Pepito",
+      "last_name": "Pérez Rodríguez",
+      "email": "pablosanchez200512@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-06-11T17:24:46Z",
+      "groups": [
+        [
+          "Vendedor"
+        ]
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$720000$i8cPSgM8TcWPnE8DeXO98l$wL4ig0M4AwjZzKL4BE5i4IAVnwI1MFb9WcT56pvSLcY=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2026-09-17T23:03:54.914Z",
+      "groups": [
+        [
+          "Administrador"
+        ]
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "ougrsuiktk04b1nzrb2oodza0a79c0ja",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2pABWnBcuu8ZyMCAVA0kpV0Z765NutDtf-_9l_C0rcVvPS1-ZnERSpx-t0DxkeoO-E711mRsdV3mIHdFHrTLqXF6Xg_376BQL996cEwRcVCoAQ0yZyLNTsOYRiR2wDYbZy0FALBWUTAm65gSqHPQpMT7A9x1N70:1uPP7M:3uygyJFY-wOkSetosNrcG48cg_fNmda94Jp7U9Ke9pA",
+      "expire_date": "2025-06-25T17:20:04.121Z"
+    }
+  },
+  {
+    "model": "authtoken.token",
+    "pk": "39cab93e420d9e7af82ba8e77a574f8f4fbc440b",
+    "fields": {
+      "user": [
+        "admin"
+      ],
+      "created": "2026-09-17T23:04:02.081Z"
+    }
+  },
+  {
+    "model": "authtoken.token",
+    "pk": "7fa0b7f394d76719f82100bcf549722a4315574c",
+    "fields": {
+      "user": [
         "Administrador"
-      ]
-    ],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "fields": {
-    "password": "pbkdf2_sha256$720000$k7lOLYsn7tilevkcWugNN4$TLBkZkMZ7JAxz4fkNIQsAc1QJQnKAjyGr/b/4HH68us=",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "Vendedor",
-    "first_name": "Pepito",
-    "last_name": "Pérez Rodríguez",
-    "email": "pablosanchez200512@gmail.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2025-06-11T17:24:46Z",
-    "groups": [
-      [
+      ],
+      "created": "2026-09-29T20:08:36.229Z"
+    }
+  },
+  {
+    "model": "api.categoria",
+    "pk": 1,
+    "fields": {
+      "nombre": "ASEO",
+      "descripcion": "productos de aseo"
+    }
+  },
+  {
+    "model": "api.categoria",
+    "pk": 2,
+    "fields": {
+      "nombre": "Ferreteria",
+      "descripcion": "Elementos de ferretería para construcción y diferentes elementos de trabajo"
+    }
+  },
+  {
+    "model": "api.categoria",
+    "pk": 3,
+    "fields": {
+      "nombre": "Jugueteria",
+      "descripcion": "Elementos de jugueterías para niños"
+    }
+  },
+  {
+    "model": "api.categoria",
+    "pk": 4,
+    "fields": {
+      "nombre": "Fantasia",
+      "descripcion": "Elementos como anillos, aretes, etc."
+    }
+  },
+  {
+    "model": "api.categoria",
+    "pk": 5,
+    "fields": {
+      "nombre": "Cristaleria",
+      "descripcion": "elementos de cristal"
+    }
+  },
+  {
+    "model": "api.categoria",
+    "pk": 6,
+    "fields": {
+      "nombre": "Plasticos",
+      "descripcion": "materiales plásticos"
+    }
+  },
+  {
+    "model": "api.categoria",
+    "pk": 7,
+    "fields": {
+      "nombre": "JUGUETES",
+      "descripcion": "jugueteria infantil"
+    }
+  },
+  {
+    "model": "api.categoria",
+    "pk": 8,
+    "fields": {
+      "nombre": "Ropa",
+      "descripcion": "prendas de vestir"
+    }
+  },
+  {
+    "model": "api.categoria",
+    "pk": 9,
+    "fields": {
+      "nombre": "NAVIDAD",
+      "descripcion": "articulos de navidad"
+    }
+  },
+  {
+    "model": "api.categoria",
+    "pk": 10,
+    "fields": {
+      "nombre": "ESCOLAR",
+      "descripcion": "ARTICULOS ESCOLARES"
+    }
+  },
+  {
+    "model": "api.categoria",
+    "pk": 11,
+    "fields": {
+      "nombre": "maascotas",
+      "descripcion": "arena para gatos"
+    }
+  },
+  {
+    "model": "api.categoria",
+    "pk": 12,
+    "fields": {
+      "nombre": "HALLOWEN",
+      "descripcion": "Disfraces y atuendos"
+    }
+  },
+  {
+    "model": "api.categoria",
+    "pk": 13,
+    "fields": {
+      "nombre": "ELECTRODOMESTICOS",
+      "descripcion": "ARTICULOS ELECTRONICOS"
+    }
+  },
+  {
+    "model": "api.categoria",
+    "pk": 14,
+    "fields": {
+      "nombre": "EQUIPOS DE COMPUTO",
+      "descripcion": "ELEMENTOS ELECTRONIOCOS"
+    }
+  },
+  {
+    "model": "api.proveedor",
+    "pk": 1,
+    "fields": {
+      "nombre": "Jabones",
+      "nit": "1234567",
+      "telefono": "3114964342",
+      "direccion": "CALLE 2 # 6-63 CALLE BARRIO SANTA BARBARA",
+      "email": "pablosanchez200512@gmail.com"
+    }
+  },
+  {
+    "model": "api.proveedor",
+    "pk": 2,
+    "fields": {
+      "nombre": "corbetta",
+      "nit": "123456",
+      "telefono": "3118688245",
+      "direccion": "CALLE 6 # 6-63 CALLE BARRIO SANTA BARBARA",
+      "email": "Kateovelencio@gmail.com"
+    }
+  },
+  {
+    "model": "api.proveedor",
+    "pk": 3,
+    "fields": {
+      "nombre": "Juegos SAS",
+      "nit": "123094834",
+      "telefono": "3114964256",
+      "direccion": "CALLE 2 # 6-63 CALLE BARRIO SANTA BARBARA",
+      "email": "Kateovelencio@gmail.com"
+    }
+  },
+  {
+    "model": "api.proveedor",
+    "pk": 4,
+    "fields": {
+      "nombre": "Casallas SAS",
+      "nit": "1256734768793",
+      "telefono": "3125826175",
+      "direccion": "CALLE 2 # 6-63 CALLE BARRIO SANTA BARBARA",
+      "email": "pablosanchez200512@gmail.com"
+    }
+  },
+  {
+    "model": "api.proveedor",
+    "pk": 5,
+    "fields": {
+      "nombre": "perro. s.a.s",
+      "nit": "567328987656278",
+      "telefono": "3126495773",
+      "direccion": "calle 4#12-4 zipaquira",
+      "email": "felipe@gmail.com"
+    }
+  },
+  {
+    "model": "api.proveedor",
+    "pk": 6,
+    "fields": {
+      "nombre": "DIOMEDEZ SAS",
+      "nit": "2342536323",
+      "telefono": "3142512563",
+      "direccion": "CALLE 2 # 6-63 CALLE BARRIO SANTA BARBARA",
+      "email": "KateAHJDovelencio@gmail.com"
+    }
+  },
+  {
+    "model": "api.proveedor",
+    "pk": 7,
+    "fields": {
+      "nombre": "Espitia s.a.s",
+      "nit": "123324",
+      "telefono": "3132458168",
+      "direccion": "CALLE 2 # 6-63 CALLE BARRIO SANTA BARBARA",
+      "email": "jvespitia@ucundinamarca.edu.co"
+    }
+  },
+  {
+    "model": "api.proveedor",
+    "pk": 8,
+    "fields": {
+      "nombre": "GILLERMO SAS",
+      "nit": "121323424",
+      "telefono": "324256241212",
+      "direccion": "CALLE 2 # 6-63 CALLE BARRIO SANTA BARBARA",
+      "email": "pablosanchez200512@gmail.com"
+    }
+  },
+  {
+    "model": "api.producto",
+    "pk": 1,
+    "fields": {
+      "codigo_barras": "708276",
+      "nombre": "jabon apol",
+      "descripcion": "jabon azul apol 230gm",
+      "categoria": 1,
+      "proveedor": 1,
+      "precio_compra": "2500.00",
+      "porcentaje_ganancia": "40.00",
+      "precio_venta": "3500.00",
+      "stock_actual": 6,
+      "stock_minimo": 2,
+      "imagen": "",
+      "fecha_creacion": "2025-06-10T18:33:00.571Z",
+      "fecha_actualizacion": "2025-06-10T18:33:00.613Z"
+    }
+  },
+  {
+    "model": "api.producto",
+    "pk": 2,
+    "fields": {
+      "codigo_barras": "1234567",
+      "nombre": "vaso",
+      "descripcion": "vaso de vidrio",
+      "categoria": 1,
+      "proveedor": 1,
+      "precio_compra": "2400.00",
+      "porcentaje_ganancia": "45.00",
+      "precio_venta": "3480.00",
+      "stock_actual": 5,
+      "stock_minimo": 5,
+      "imagen": "",
+      "fecha_creacion": "2025-06-10T20:02:49.005Z",
+      "fecha_actualizacion": "2025-06-10T20:02:49.032Z"
+    }
+  },
+  {
+    "model": "api.producto",
+    "pk": 3,
+    "fields": {
+      "codigo_barras": "1243564",
+      "nombre": "perro",
+      "descripcion": "juguete en forma de perro",
+      "categoria": 3,
+      "proveedor": 2,
+      "precio_compra": "3500.00",
+      "porcentaje_ganancia": "40.00",
+      "precio_venta": "4900.00",
+      "stock_actual": 22,
+      "stock_minimo": 5,
+      "imagen": "",
+      "fecha_creacion": "2025-06-10T20:08:32.002Z",
+      "fecha_actualizacion": "2025-06-10T20:08:32.131Z"
+    }
+  },
+  {
+    "model": "api.producto",
+    "pk": 10003,
+    "fields": {
+      "codigo_barras": "7382738824",
+      "nombre": "copa",
+      "descripcion": "elemento de vidrio",
+      "categoria": 5,
+      "proveedor": 2,
+      "precio_compra": "2300.00",
+      "porcentaje_ganancia": "40.00",
+      "precio_venta": "3220.00",
+      "stock_actual": 25,
+      "stock_minimo": 2,
+      "imagen": "",
+      "fecha_creacion": "2025-06-11T19:58:43.392Z",
+      "fecha_actualizacion": "2025-06-11T19:58:43.429Z"
+    }
+  },
+  {
+    "model": "api.producto",
+    "pk": 10004,
+    "fields": {
+      "codigo_barras": "12672712",
+      "nombre": "copa 3.5",
+      "descripcion": "copa grande",
+      "categoria": 5,
+      "proveedor": 2,
+      "precio_compra": "4500.00",
+      "porcentaje_ganancia": "50.00",
+      "precio_venta": "6750.00",
+      "stock_actual": 48,
+      "stock_minimo": 10,
+      "imagen": "",
+      "fecha_creacion": "2025-06-11T20:29:29.043Z",
+      "fecha_actualizacion": "2025-06-11T20:29:29.067Z"
+    }
+  },
+  {
+    "model": "api.producto",
+    "pk": 10005,
+    "fields": {
+      "codigo_barras": "1243454574",
+      "nombre": "Jabon polvo",
+      "descripcion": "jkjk",
+      "categoria": 1,
+      "proveedor": 1,
+      "precio_compra": "2800.00",
+      "porcentaje_ganancia": "50.00",
+      "precio_venta": "4200.00",
+      "stock_actual": 25,
+      "stock_minimo": 5,
+      "imagen": "",
+      "fecha_creacion": "2025-06-12T02:51:32.185Z",
+      "fecha_actualizacion": "2025-06-12T02:51:32.229Z"
+    }
+  },
+  {
+    "model": "api.producto",
+    "pk": 10006,
+    "fields": {
+      "codigo_barras": "45326153267",
+      "nombre": "Tasa",
+      "descripcion": "Tasa plástica",
+      "categoria": 6,
+      "proveedor": 4,
+      "precio_compra": "2500.00",
+      "porcentaje_ganancia": "50.00",
+      "precio_venta": "3750.00",
+      "stock_actual": 58,
+      "stock_minimo": 2,
+      "imagen": "",
+      "fecha_creacion": "2025-06-12T03:00:57.747Z",
+      "fecha_actualizacion": "2025-06-12T03:00:57.768Z"
+    }
+  },
+  {
+    "model": "api.producto",
+    "pk": 10007,
+    "fields": {
+      "codigo_barras": "7082768",
+      "nombre": "DOG",
+      "descripcion": "DJKFA",
+      "categoria": 4,
+      "proveedor": 4,
+      "precio_compra": "3000.00",
+      "porcentaje_ganancia": "50.00",
+      "precio_venta": "4500.00",
+      "stock_actual": 29,
+      "stock_minimo": 5,
+      "imagen": "",
+      "fecha_creacion": "2025-06-12T04:00:35.771Z",
+      "fecha_actualizacion": "2025-06-12T04:00:35.782Z"
+    }
+  },
+  {
+    "model": "api.producto",
+    "pk": 10008,
+    "fields": {
+      "codigo_barras": "453261532673535",
+      "nombre": "Tasa 15",
+      "descripcion": "hfdsklhfkjs",
+      "categoria": 6,
+      "proveedor": 4,
+      "precio_compra": "2500.00",
+      "porcentaje_ganancia": "50.00",
+      "precio_venta": "3750.00",
+      "stock_actual": 67,
+      "stock_minimo": 2,
+      "imagen": "",
+      "fecha_creacion": "2025-06-12T19:20:22.339Z",
+      "fecha_actualizacion": "2025-06-12T19:20:22.355Z"
+    }
+  },
+  {
+    "model": "api.producto",
+    "pk": 10009,
+    "fields": {
+      "codigo_barras": "21345442",
+      "nombre": "carro",
+      "descripcion": "hottwells",
+      "categoria": 7,
+      "proveedor": 3,
+      "precio_compra": "10000.00",
+      "porcentaje_ganancia": "45.00",
+      "precio_venta": "14500.00",
+      "stock_actual": 50,
+      "stock_minimo": 4,
+      "imagen": "",
+      "fecha_creacion": "2025-06-12T19:42:47.652Z",
+      "fecha_actualizacion": "2025-06-12T19:42:47.659Z"
+    }
+  },
+  {
+    "model": "api.producto",
+    "pk": 10010,
+    "fields": {
+      "codigo_barras": "6742472",
+      "nombre": "Gorro de navidad",
+      "descripcion": "gorro rojo de navidad",
+      "categoria": 9,
+      "proveedor": 2,
+      "precio_compra": "2000.00",
+      "porcentaje_ganancia": "49.95",
+      "precio_venta": "2999.00",
+      "stock_actual": 14,
+      "stock_minimo": 3,
+      "imagen": "",
+      "fecha_creacion": "2025-10-28T03:12:40.331Z",
+      "fecha_actualizacion": "2025-10-28T03:12:40.339Z"
+    }
+  },
+  {
+    "model": "api.producto",
+    "pk": 10011,
+    "fields": {
+      "codigo_barras": "345677",
+      "nombre": "VELA 01",
+      "descripcion": "VELAS NAVIDEÑAS",
+      "categoria": 9,
+      "proveedor": 2,
+      "precio_compra": "4000.05",
+      "porcentaje_ganancia": "50.00",
+      "precio_venta": "6000.08",
+      "stock_actual": 17,
+      "stock_minimo": 5,
+      "imagen": "",
+      "fecha_creacion": "2025-10-28T03:48:22.232Z",
+      "fecha_actualizacion": "2025-10-28T03:48:22.263Z"
+    }
+  },
+  {
+    "model": "api.producto",
+    "pk": 10012,
+    "fields": {
+      "codigo_barras": "132435343",
+      "nombre": "MASCARA",
+      "descripcion": "MASCARA HALLOWEN",
+      "categoria": 12,
+      "proveedor": 7,
+      "precio_compra": "4000.00",
+      "porcentaje_ganancia": "20.00",
+      "precio_venta": "4800.00",
+      "stock_actual": 50,
+      "stock_minimo": 15,
+      "imagen": "",
+      "fecha_creacion": "2026-05-05T13:02:29.669Z",
+      "fecha_actualizacion": "2026-05-05T13:02:29.688Z"
+    }
+  },
+  {
+    "model": "api.producto",
+    "pk": 10013,
+    "fields": {
+      "codigo_barras": "1132324",
+      "nombre": "RATON",
+      "descripcion": "ELEMENTOS",
+      "categoria": 14,
+      "proveedor": 8,
+      "precio_compra": "25000.00",
+      "porcentaje_ganancia": "15.00",
+      "precio_venta": "28750.00",
+      "stock_actual": 27,
+      "stock_minimo": 2,
+      "imagen": "",
+      "fecha_creacion": "2026-05-05T13:30:47.393Z",
+      "fecha_actualizacion": "2026-05-05T13:30:47.401Z"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10023,
+    "fields": {
+      "fecha_venta": "2025-06-11T23:34:08.466Z",
+      "total": "4900.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10024,
+    "fields": {
+      "fecha_venta": "2025-06-11T23:34:23.209Z",
+      "total": "3480.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10025,
+    "fields": {
+      "fecha_venta": "2025-06-12T02:56:10.660Z",
+      "total": "3480.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10026,
+    "fields": {
+      "fecha_venta": "2025-06-12T02:56:26.572Z",
+      "total": "4200.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10027,
+    "fields": {
+      "fecha_venta": "2025-06-12T03:29:17.464Z",
+      "total": "15000.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10028,
+    "fields": {
+      "fecha_venta": "2025-06-12T03:34:44.248Z",
+      "total": "30000.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10029,
+    "fields": {
+      "fecha_venta": "2025-06-12T03:59:47.792Z",
+      "total": "4900.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10030,
+    "fields": {
+      "fecha_venta": "2025-06-12T19:44:35.784Z",
+      "total": "725000.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10031,
+    "fields": {
+      "fecha_venta": "2025-10-28T03:07:39.468Z",
+      "total": "14000.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10032,
+    "fields": {
+      "fecha_venta": "2025-10-28T03:09:20.385Z",
+      "total": "27840.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10033,
+    "fields": {
+      "fecha_venta": "2025-10-28T03:09:36.100Z",
+      "total": "31320.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10034,
+    "fields": {
+      "fecha_venta": "2025-10-28T03:10:03.563Z",
+      "total": "6960.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10035,
+    "fields": {
+      "fecha_venta": "2025-10-28T04:02:37.825Z",
+      "total": "25250.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10036,
+    "fields": {
+      "fecha_venta": "2025-10-28T13:56:28.264Z",
+      "total": "14000.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10037,
+    "fields": {
+      "fecha_venta": "2026-03-13T14:15:05.140Z",
+      "total": "14000.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10038,
+    "fields": {
+      "fecha_venta": "2026-03-13T14:16:36.154Z",
+      "total": "6750.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10039,
+    "fields": {
+      "fecha_venta": "2026-04-16T12:54:24.579Z",
+      "total": "3500.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10040,
+    "fields": {
+      "fecha_venta": "2026-04-16T13:16:31.111Z",
+      "total": "24000.32",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10041,
+    "fields": {
+      "fecha_venta": "2026-04-16T13:23:11.993Z",
+      "total": "6000.08",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10042,
+    "fields": {
+      "fecha_venta": "2026-04-16T13:31:27.232Z",
+      "total": "6000.08",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10043,
+    "fields": {
+      "fecha_venta": "2026-04-16T17:08:12.996Z",
+      "total": "10500.08",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10044,
+    "fields": {
+      "fecha_venta": "2026-04-16T17:14:47.582Z",
+      "total": "10900.08",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10045,
+    "fields": {
+      "fecha_venta": "2026-05-04T14:54:00.894Z",
+      "total": "42738.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10046,
+    "fields": {
+      "fecha_venta": "2026-05-05T13:32:27.472Z",
+      "total": "143750.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10047,
+    "fields": {
+      "fecha_venta": "2026-09-17T16:14:10.469Z",
+      "total": "143750.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10048,
+    "fields": {
+      "fecha_venta": "2026-09-17T20:12:24.499Z",
+      "total": "115000.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10049,
+    "fields": {
+      "fecha_venta": "2026-09-17T20:12:25.985Z",
+      "total": "115000.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.venta",
+    "pk": 10050,
+    "fields": {
+      "fecha_venta": "2026-09-17T22:59:37.117Z",
+      "total": "32250.00",
+      "metodo_pago": "Efectivo",
+      "vendedor": "Vendedor_Predeterminado"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 1,
+    "fields": {
+      "venta": 10023,
+      "producto": 3,
+      "cantidad": 1,
+      "precio_unitario": "4900.00",
+      "subtotal": "4900.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 2,
+    "fields": {
+      "venta": 10024,
+      "producto": 2,
+      "cantidad": 1,
+      "precio_unitario": "3480.00",
+      "subtotal": "3480.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 3,
+    "fields": {
+      "venta": 10025,
+      "producto": 2,
+      "cantidad": 1,
+      "precio_unitario": "3480.00",
+      "subtotal": "3480.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 4,
+    "fields": {
+      "venta": 10026,
+      "producto": 10005,
+      "cantidad": 1,
+      "precio_unitario": "4200.00",
+      "subtotal": "4200.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 5,
+    "fields": {
+      "venta": 10027,
+      "producto": 10006,
+      "cantidad": 4,
+      "precio_unitario": "3750.00",
+      "subtotal": "15000.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 6,
+    "fields": {
+      "venta": 10028,
+      "producto": 10006,
+      "cantidad": 8,
+      "precio_unitario": "3750.00",
+      "subtotal": "30000.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 7,
+    "fields": {
+      "venta": 10029,
+      "producto": 3,
+      "cantidad": 1,
+      "precio_unitario": "4900.00",
+      "subtotal": "4900.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 8,
+    "fields": {
+      "venta": 10030,
+      "producto": 10009,
+      "cantidad": 50,
+      "precio_unitario": "14500.00",
+      "subtotal": "725000.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 9,
+    "fields": {
+      "venta": 10031,
+      "producto": 1,
+      "cantidad": 4,
+      "precio_unitario": "3500.00",
+      "subtotal": "14000.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 10,
+    "fields": {
+      "venta": 10032,
+      "producto": 2,
+      "cantidad": 8,
+      "precio_unitario": "3480.00",
+      "subtotal": "27840.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 11,
+    "fields": {
+      "venta": 10033,
+      "producto": 2,
+      "cantidad": 9,
+      "precio_unitario": "3480.00",
+      "subtotal": "31320.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 12,
+    "fields": {
+      "venta": 10034,
+      "producto": 2,
+      "cantidad": 2,
+      "precio_unitario": "3480.00",
+      "subtotal": "6960.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 13,
+    "fields": {
+      "venta": 10035,
+      "producto": 1,
+      "cantidad": 4,
+      "precio_unitario": "3500.00",
+      "subtotal": "14000.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 14,
+    "fields": {
+      "venta": 10035,
+      "producto": 10008,
+      "cantidad": 3,
+      "precio_unitario": "3750.00",
+      "subtotal": "11250.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 15,
+    "fields": {
+      "venta": 10036,
+      "producto": 1,
+      "cantidad": 4,
+      "precio_unitario": "3500.00",
+      "subtotal": "14000.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 16,
+    "fields": {
+      "venta": 10037,
+      "producto": 1,
+      "cantidad": 4,
+      "precio_unitario": "3500.00",
+      "subtotal": "14000.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 17,
+    "fields": {
+      "venta": 10038,
+      "producto": 10004,
+      "cantidad": 1,
+      "precio_unitario": "6750.00",
+      "subtotal": "6750.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 18,
+    "fields": {
+      "venta": 10039,
+      "producto": 1,
+      "cantidad": 1,
+      "precio_unitario": "3500.00",
+      "subtotal": "3500.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 19,
+    "fields": {
+      "venta": 10040,
+      "producto": 10011,
+      "cantidad": 4,
+      "precio_unitario": "6000.08",
+      "subtotal": "24000.32"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 20,
+    "fields": {
+      "venta": 10041,
+      "producto": 10011,
+      "cantidad": 1,
+      "precio_unitario": "6000.08",
+      "subtotal": "6000.08"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 21,
+    "fields": {
+      "venta": 10042,
+      "producto": 10011,
+      "cantidad": 1,
+      "precio_unitario": "6000.08",
+      "subtotal": "6000.08"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 22,
+    "fields": {
+      "venta": 10043,
+      "producto": 10011,
+      "cantidad": 1,
+      "precio_unitario": "6000.08",
+      "subtotal": "6000.08"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 23,
+    "fields": {
+      "venta": 10043,
+      "producto": 10007,
+      "cantidad": 1,
+      "precio_unitario": "4500.00",
+      "subtotal": "4500.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 24,
+    "fields": {
+      "venta": 10044,
+      "producto": 10011,
+      "cantidad": 1,
+      "precio_unitario": "6000.08",
+      "subtotal": "6000.08"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 25,
+    "fields": {
+      "venta": 10044,
+      "producto": 3,
+      "cantidad": 1,
+      "precio_unitario": "4900.00",
+      "subtotal": "4900.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 26,
+    "fields": {
+      "venta": 10045,
+      "producto": 10010,
+      "cantidad": 12,
+      "precio_unitario": "2999.00",
+      "subtotal": "35988.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 27,
+    "fields": {
+      "venta": 10045,
+      "producto": 10004,
+      "cantidad": 1,
+      "precio_unitario": "6750.00",
+      "subtotal": "6750.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 28,
+    "fields": {
+      "venta": 10046,
+      "producto": 10013,
+      "cantidad": 5,
+      "precio_unitario": "28750.00",
+      "subtotal": "143750.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 29,
+    "fields": {
+      "venta": 10047,
+      "producto": 10013,
+      "cantidad": 5,
+      "precio_unitario": "28750.00",
+      "subtotal": "143750.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 30,
+    "fields": {
+      "venta": 10048,
+      "producto": 10013,
+      "cantidad": 4,
+      "precio_unitario": "28750.00",
+      "subtotal": "115000.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 31,
+    "fields": {
+      "venta": 10049,
+      "producto": 10013,
+      "cantidad": 4,
+      "precio_unitario": "28750.00",
+      "subtotal": "115000.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 32,
+    "fields": {
+      "venta": 10050,
+      "producto": 10013,
+      "cantidad": 1,
+      "precio_unitario": "28750.00",
+      "subtotal": "28750.00"
+    }
+  },
+  {
+    "model": "api.detalleventa",
+    "pk": 33,
+    "fields": {
+      "venta": 10050,
+      "producto": 1,
+      "cantidad": 1,
+      "precio_unitario": "3500.00",
+      "subtotal": "3500.00"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatsession",
+    "pk": 1,
+    "fields": {
+      "usuario": [
         "Vendedor"
-      ]
-    ],
-    "user_permissions": []
+      ],
+      "estado": "idle",
+      "contexto": {},
+      "activa": true,
+      "creada_en": "2026-09-17T16:04:51.209Z",
+      "actualizada_en": "2026-09-17T23:08:52.906Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatsession",
+    "pk": 2,
+    "fields": {
+      "usuario": [
+        "pablo"
+      ],
+      "estado": "idle",
+      "contexto": {},
+      "activa": true,
+      "creada_en": "2026-09-17T17:01:40.866Z",
+      "actualizada_en": "2026-09-17T17:01:40.866Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatsession",
+    "pk": 3,
+    "fields": {
+      "usuario": [
+        "pablo"
+      ],
+      "estado": "idle",
+      "contexto": {},
+      "activa": true,
+      "creada_en": "2026-09-17T17:02:17.708Z",
+      "actualizada_en": "2026-09-17T17:02:17.708Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 1,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "¡Bienvenido al chat de INBOTF! Escribe \"ayuda\" para ver lo que puedo hacer por ti.",
+      "imagen": "",
+      "intent": "saludo",
+      "metadata": {},
+      "creado_en": "2026-09-17T16:04:51.247Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 2,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "ayuda",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T16:04:55.384Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 3,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "Soy el asistente de INBOTF. Puedes escribirme:\n• \"buscar [nombre o código]\" — consultar producto\n• \"stock bajo\" — productos con inventario bajo\n• \"ventas de hoy\" — resumen del día\n• \"identificar producto\" — luego envía una foto del producto\n• Envía una imagen directamente para validación visual o código de barras",
+      "imagen": "",
+      "intent": "ayuda",
+      "metadata": {},
+      "creado_en": "2026-09-17T16:04:55.390Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 4,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "identificar producto",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T16:05:06.534Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 5,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "Perfecto. Envíame una foto clara del producto o del código de barras.",
+      "imagen": "",
+      "intent": "identificar_foto",
+      "metadata": {},
+      "creado_en": "2026-09-17T16:05:06.543Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 6,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "",
+      "imagen": "chat/Imagen1.png",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T16:05:16.143Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 7,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "No encontré coincidencias visuales en el catálogo.",
+      "imagen": "",
+      "intent": "validar_imagen",
+      "metadata": {
+        "validation": {
+          "matched": false,
+          "method": "visual_similarity",
+          "confidence": 0.0,
+          "alternatives": []
+        }
+      },
+      "creado_en": "2026-09-17T16:05:16.207Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 8,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "ventas de hoy",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T16:05:51.330Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 9,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "stock bajo",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T16:05:55.539Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 10,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "Hay 1 producto(s) con stock bajo:\n• vaso: 5/5",
+      "imagen": "",
+      "intent": "stock_bajo",
+      "metadata": {
+        "count": 1,
+        "productos": [
+          2
+        ]
+      },
+      "creado_en": "2026-09-17T16:05:55.552Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 11,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "ayuda",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T16:06:14.109Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 12,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "Soy el asistente de INBOTF. Puedes escribirme:\n• \"buscar [nombre o código]\" — consultar producto\n• \"stock bajo\" — productos con inventario bajo\n• \"ventas de hoy\" — resumen del día\n• \"identificar producto\" — luego envía una foto del producto\n• Envía una imagen directamente para validación visual o código de barras",
+      "imagen": "",
+      "intent": "ayuda",
+      "metadata": {},
+      "creado_en": "2026-09-17T16:06:14.113Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 13,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "stock bajo",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T16:06:49.343Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 14,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "Hay 1 producto(s) con stock bajo:\n• vaso: 5/5",
+      "imagen": "",
+      "intent": "stock_bajo",
+      "metadata": {
+        "count": 1,
+        "productos": [
+          2
+        ]
+      },
+      "creado_en": "2026-09-17T16:06:49.392Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 15,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "ventas de hoy",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T16:06:58.021Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 16,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "identificar producto",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T16:07:00.805Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 17,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "Perfecto. Envíame una foto clara del producto o del código de barras.",
+      "imagen": "",
+      "intent": "identificar_foto",
+      "metadata": {},
+      "creado_en": "2026-09-17T16:07:00.813Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 18,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "",
+      "imagen": "chat/Linea_del_tiempo_Telecomunicaciones.png",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T16:07:26.638Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 19,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "No encontré coincidencias visuales en el catálogo.",
+      "imagen": "",
+      "intent": "validar_imagen",
+      "metadata": {
+        "validation": {
+          "matched": false,
+          "method": "visual_similarity",
+          "confidence": 0.0,
+          "alternatives": []
+        }
+      },
+      "creado_en": "2026-09-17T16:07:26.739Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 20,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "ventas de hoy",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T16:14:13.952Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 21,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "ventas de hoy",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T17:01:19.323Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 22,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "identificar producto",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T17:01:21.513Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 23,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "Perfecto. Envíame una foto clara del producto o del código de barras.",
+      "imagen": "",
+      "intent": "identificar_foto",
+      "metadata": {},
+      "creado_en": "2026-09-17T17:01:21.526Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 24,
+    "fields": {
+      "session": 3,
+      "rol": "bot",
+      "texto": "Ventas de hoy (2026-09-17):\n  Transacciones: 1\n  Total: $143,750.00\n  Más vendidos:\n  • RATON: 5 uds.",
+      "imagen": "",
+      "intent": "ventas_hoy",
+      "metadata": {
+        "fecha": "2026-09-17",
+        "total_ventas": 143750.0,
+        "cantidad_ventas": 1
+      },
+      "creado_en": "2026-09-17T17:02:18.154Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 25,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "quiero revisar el precio de un producto",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T17:36:40.868Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 26,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "Estoy esperando la foto del producto. Adjunta una imagen en tu mensaje.",
+      "imagen": "",
+      "intent": "identificar_foto",
+      "metadata": {},
+      "creado_en": "2026-09-17T17:36:40.913Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 27,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "puedes revisar en el inventario}",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T17:37:15.659Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 28,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "Estoy esperando la foto del producto. Adjunta una imagen en tu mensaje.",
+      "imagen": "",
+      "intent": "identificar_foto",
+      "metadata": {},
+      "creado_en": "2026-09-17T17:37:15.665Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 29,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "sobre el stock bajo",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T17:37:25.179Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 30,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "Estoy esperando la foto del producto. Adjunta una imagen en tu mensaje.",
+      "imagen": "",
+      "intent": "identificar_foto",
+      "metadata": {},
+      "creado_en": "2026-09-17T17:37:25.184Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 31,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "",
+      "imagen": "chat/Imagen1_8CKVmVg.png",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T17:37:34.583Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 32,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "No encontré coincidencias visuales en el catálogo.",
+      "imagen": "",
+      "intent": "validar_imagen",
+      "metadata": {
+        "validation": {
+          "matched": false,
+          "method": "visual_similarity",
+          "confidence": 0.0,
+          "alternatives": []
+        }
+      },
+      "creado_en": "2026-09-17T17:37:34.621Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 33,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "ventas de hoy",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T19:07:44.935Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 34,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "Ventas de hoy (2026-09-17):\n  Transacciones: 1\n  Total: $143,750.00\n  Más vendidos:\n  • RATON: 5 uds.",
+      "imagen": "",
+      "intent": "ventas_hoy",
+      "metadata": {
+        "fecha": "2026-09-17",
+        "total_ventas": 143750.0,
+        "cantidad_ventas": 1
+      },
+      "creado_en": "2026-09-17T19:07:45.007Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 35,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "ayuda",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T19:31:18.561Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 36,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "Soy el asistente de INBOTF. Puedes escribirme:\n• \"buscar [nombre o código]\" — consultar producto\n• \"stock bajo\" — productos con inventario bajo\n• \"ventas de hoy\" — resumen del día\n• \"identificar producto\" — luego envía una foto del producto\n• Envía una imagen directamente para validación visual o código de barras",
+      "imagen": "",
+      "intent": "ayuda",
+      "metadata": {},
+      "creado_en": "2026-09-17T19:31:18.585Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 37,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "ayuda",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T19:31:22.543Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 38,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "Soy el asistente de INBOTF. Puedes escribirme:\n• \"buscar [nombre o código]\" — consultar producto\n• \"stock bajo\" — productos con inventario bajo\n• \"ventas de hoy\" — resumen del día\n• \"identificar producto\" — luego envía una foto del producto\n• Envía una imagen directamente para validación visual o código de barras",
+      "imagen": "",
+      "intent": "ayuda",
+      "metadata": {},
+      "creado_en": "2026-09-17T19:31:22.546Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 39,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "stock bajo",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T19:31:24.442Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 40,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "Hay 1 producto(s) con stock bajo:\n• vaso: 5/5",
+      "imagen": "",
+      "intent": "stock_bajo",
+      "metadata": {
+        "count": 1,
+        "productos": [
+          2
+        ]
+      },
+      "creado_en": "2026-09-17T19:31:24.455Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 41,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "ventas de hoy",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T19:31:30.274Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 42,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "Ventas de hoy (2026-09-17):\n  Transacciones: 1\n  Total: $143,750.00\n  Más vendidos:\n  • RATON: 5 uds.",
+      "imagen": "",
+      "intent": "ventas_hoy",
+      "metadata": {
+        "fecha": "2026-09-17",
+        "total_ventas": 143750.0,
+        "cantidad_ventas": 1
+      },
+      "creado_en": "2026-09-17T19:31:30.303Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 43,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "ayuda",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T21:46:23.220Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 44,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "Soy el asistente de INBOTF. Puedes escribirme:\n• \"buscar [nombre o código]\" — consultar producto\n• \"stock bajo\" — productos con inventario bajo\n• \"ventas de hoy\" — resumen del día\n• \"identificar producto\" — luego envía una foto del producto\n• Envía una imagen directamente para validación visual o código de barras",
+      "imagen": "",
+      "intent": "ayuda",
+      "metadata": {},
+      "creado_en": "2026-09-17T21:46:23.257Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 45,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "stock bajo",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T22:56:36.688Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 46,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "Hay 1 producto(s) con stock bajo:\n• vaso: 5/5",
+      "imagen": "",
+      "intent": "stock_bajo",
+      "metadata": {
+        "count": 1,
+        "productos": [
+          2
+        ]
+      },
+      "creado_en": "2026-09-17T22:56:36.737Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 47,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "ayuda",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T23:08:20.796Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 48,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "Soy el asistente de INBOTF. Puedes escribirme:\n• \"buscar [nombre o código]\" — consultar producto\n• \"stock bajo\" — productos con inventario bajo\n• \"ventas de hoy\" — resumen del día\n• \"identificar producto\" — luego envía una foto del producto\n• Envía una imagen directamente para validación visual o código de barras",
+      "imagen": "",
+      "intent": "ayuda",
+      "metadata": {},
+      "creado_en": "2026-09-17T23:08:20.827Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 49,
+    "fields": {
+      "session": 1,
+      "rol": "user",
+      "texto": "ventas de hoy",
+      "imagen": "",
+      "intent": "",
+      "metadata": {},
+      "creado_en": "2026-09-17T23:08:52.841Z"
+    }
+  },
+  {
+    "model": "aplicacion_movil.chatmessage",
+    "pk": 50,
+    "fields": {
+      "session": 1,
+      "rol": "bot",
+      "texto": "Ventas de hoy (2026-09-17):\n  Transacciones: 4\n  Total: $406,000.00\n  Más vendidos:\n  • RATON: 14 uds.\n  • jabon apol: 1 uds.",
+      "imagen": "",
+      "intent": "ventas_hoy",
+      "metadata": {
+        "fecha": "2026-09-17",
+        "total_ventas": 406000.0,
+        "cantidad_ventas": 4
+      },
+      "creado_en": "2026-09-17T23:08:52.900Z"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2025-06-11T17:24:03.108Z",
+      "user": [
+        "pablo"
+      ],
+      "content_type": [
+        "auth",
+        "user"
+      ],
+      "object_id": "2",
+      "object_repr": "Administrador",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2025-06-11T17:24:46.970Z",
+      "user": [
+        "pablo"
+      ],
+      "content_type": [
+        "auth",
+        "user"
+      ],
+      "object_id": "3",
+      "object_repr": "Vendedor",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2025-06-11T17:27:38.284Z",
+      "user": [
+        "pablo"
+      ],
+      "content_type": [
+        "auth",
+        "user"
+      ],
+      "object_id": "3",
+      "object_repr": "Vendedor",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\", \"User permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2025-06-11T17:28:50.825Z",
+      "user": [
+        "pablo"
+      ],
+      "content_type": [
+        "auth",
+        "user"
+      ],
+      "object_id": "2",
+      "object_repr": "Administrador",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2025-06-11T17:32:44.835Z",
+      "user": [
+        "pablo"
+      ],
+      "content_type": [
+        "auth",
+        "group"
+      ],
+      "object_id": "1",
+      "object_repr": "vendedores",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2025-06-11T17:32:54.745Z",
+      "user": [
+        "pablo"
+      ],
+      "content_type": [
+        "auth",
+        "group"
+      ],
+      "object_id": "1",
+      "object_repr": "vendedores",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2025-06-11T17:33:50.481Z",
+      "user": [
+        "pablo"
+      ],
+      "content_type": [
+        "auth",
+        "group"
+      ],
+      "object_id": "2",
+      "object_repr": "Administradores",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2025-06-11T17:34:52.730Z",
+      "user": [
+        "pablo"
+      ],
+      "content_type": [
+        "auth",
+        "user"
+      ],
+      "object_id": "3",
+      "object_repr": "Vendedor",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Groups\", \"User permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2025-06-11T17:35:01.164Z",
+      "user": [
+        "pablo"
+      ],
+      "content_type": [
+        "auth",
+        "user"
+      ],
+      "object_id": "2",
+      "object_repr": "Administrador",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2025-06-11T17:38:58.466Z",
+      "user": [
+        "pablo"
+      ],
+      "content_type": [
+        "auth",
+        "user"
+      ],
+      "object_id": "2",
+      "object_repr": "Administrador",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Last login\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2025-06-11T17:41:09.974Z",
+      "user": [
+        "pablo"
+      ],
+      "content_type": [
+        "auth",
+        "user"
+      ],
+      "object_id": "2",
+      "object_repr": "Administrador",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2025-06-11T18:21:29.398Z",
+      "user": [
+        "pablo"
+      ],
+      "content_type": [
+        "auth",
+        "group"
+      ],
+      "object_id": "1",
+      "object_repr": "vendedor",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2025-06-11T18:22:26.075Z",
+      "user": [
+        "pablo"
+      ],
+      "content_type": [
+        "auth",
+        "group"
+      ],
+      "object_id": "1",
+      "object_repr": "Vendedor",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2025-06-11T19:35:16.264Z",
+      "user": [
+        "pablo"
+      ],
+      "content_type": [
+        "auth",
+        "group"
+      ],
+      "object_id": "1",
+      "object_repr": "Vendedor",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2025-06-11T19:39:35.265Z",
+      "user": [
+        "pablo"
+      ],
+      "content_type": [
+        "auth",
+        "group"
+      ],
+      "object_id": "2",
+      "object_repr": "Administradores",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2025-06-11T19:41:56.094Z",
+      "user": [
+        "pablo"
+      ],
+      "content_type": [
+        "auth",
+        "group"
+      ],
+      "object_id": "2",
+      "object_repr": "Administrador",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2025-06-11T19:48:09.929Z",
+      "user": [
+        "pablo"
+      ],
+      "content_type": [
+        "auth",
+        "group"
+      ],
+      "object_id": "2",
+      "object_repr": "Administrador",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$720000$AIpyq9Tnkk1Eh8GZpnlRrt$oQQtoqCOdebG/OQ+TLCAenm7jMnxXyTfQsLaom6uBHc=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "vendedor",
+      "first_name": "Vendedor",
+      "last_name": "Sistema",
+      "email": "vendedor@inbotf.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-09-17T23:03:54.914Z",
+      "groups": [
+        [
+          "Vendedor"
+        ]
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$720000$ogI3ZsJOEh9a9syEm7uxy7$5Q5aXf0G02+NKqJUNkboM50k8Smjm4Ri95xuT9rl9gI=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "bodeguero",
+      "first_name": "Bodeguero",
+      "last_name": "Sistema",
+      "email": "bodega@inbotf.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-09-17T23:03:54.914Z",
+      "groups": [
+        [
+          "Bodeguero"
+        ]
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authtoken.token",
+    "pk": "950dfa096d9c5844e8d6d9a2f7735a79fe8636d4",
+    "fields": {
+      "user": [
+        "bodeguero"
+      ],
+      "created": "2026-09-17T23:04:02.081Z"
+    }
+  },
+  {
+    "model": "authtoken.token",
+    "pk": "24167ed9048a16a4613f9e82ec3ea4c9ede2a584",
+    "fields": {
+      "user": [
+        "vendedor"
+      ],
+      "created": "2026-09-17T23:04:02.081Z"
+    }
   }
-},
-{
-  "model": "auth.user",
-  "fields": {
-    "password": "pbkdf2_sha256$720000$i8cPSgM8TcWPnE8DeXO98l$wL4ig0M4AwjZzKL4BE5i4IAVnwI1MFb9WcT56pvSLcY=",
-    "last_login": null,
-    "is_superuser": true,
-    "username": "admin",
-    "first_name": "",
-    "last_name": "",
-    "email": "",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2026-09-17T23:03:54.914Z",
-    "groups": [
-      [
-        "Administrador"
-      ]
-    ],
-    "user_permissions": []
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "ougrsuiktk04b1nzrb2oodza0a79c0ja",
-  "fields": {
-    "session_data": ".eJxVjEEOwiAQRe_C2pABWnBcuu8ZyMCAVA0kpV0Z765NutDtf-_9l_C0rcVvPS1-ZnERSpx-t0DxkeoO-E711mRsdV3mIHdFHrTLqXF6Xg_376BQL996cEwRcVCoAQ0yZyLNTsOYRiR2wDYbZy0FALBWUTAm65gSqHPQpMT7A9x1N70:1uPP7M:3uygyJFY-wOkSetosNrcG48cg_fNmda94Jp7U9Ke9pA",
-    "expire_date": "2025-06-25T17:20:04.121Z"
-  }
-},
-{
-  "model": "authtoken.token",
-  "pk": "39cab93e420d9e7af82ba8e77a574f8f4fbc440b",
-  "fields": {
-    "user": [
-      "admin"
-    ],
-    "created": "2026-09-17T23:04:02.081Z"
-  }
-},
-{
-  "model": "authtoken.token",
-  "pk": "7fa0b7f394d76719f82100bcf549722a4315574c",
-  "fields": {
-    "user": [
-      "Administrador"
-    ],
-    "created": "2026-09-29T20:08:36.229Z"
-  }
-},
-{
-  "model": "api.categoria",
-  "pk": 1,
-  "fields": {
-    "nombre": "ASEO",
-    "descripcion": "productos de aseo"
-  }
-},
-{
-  "model": "api.categoria",
-  "pk": 2,
-  "fields": {
-    "nombre": "Ferreteria",
-    "descripcion": "Elementos de ferretería para construcción y diferentes elementos de trabajo"
-  }
-},
-{
-  "model": "api.categoria",
-  "pk": 3,
-  "fields": {
-    "nombre": "Jugueteria",
-    "descripcion": "Elementos de jugueterías para niños"
-  }
-},
-{
-  "model": "api.categoria",
-  "pk": 4,
-  "fields": {
-    "nombre": "Fantasia",
-    "descripcion": "Elementos como anillos, aretes, etc."
-  }
-},
-{
-  "model": "api.categoria",
-  "pk": 5,
-  "fields": {
-    "nombre": "Cristaleria",
-    "descripcion": "elementos de cristal"
-  }
-},
-{
-  "model": "api.categoria",
-  "pk": 6,
-  "fields": {
-    "nombre": "Plasticos",
-    "descripcion": "materiales plásticos"
-  }
-},
-{
-  "model": "api.categoria",
-  "pk": 7,
-  "fields": {
-    "nombre": "JUGUETES",
-    "descripcion": "jugueteria infantil"
-  }
-},
-{
-  "model": "api.categoria",
-  "pk": 8,
-  "fields": {
-    "nombre": "Ropa",
-    "descripcion": "prendas de vestir"
-  }
-},
-{
-  "model": "api.categoria",
-  "pk": 9,
-  "fields": {
-    "nombre": "NAVIDAD",
-    "descripcion": "articulos de navidad"
-  }
-},
-{
-  "model": "api.categoria",
-  "pk": 10,
-  "fields": {
-    "nombre": "ESCOLAR",
-    "descripcion": "ARTICULOS ESCOLARES"
-  }
-},
-{
-  "model": "api.categoria",
-  "pk": 11,
-  "fields": {
-    "nombre": "maascotas",
-    "descripcion": "arena para gatos"
-  }
-},
-{
-  "model": "api.categoria",
-  "pk": 12,
-  "fields": {
-    "nombre": "HALLOWEN",
-    "descripcion": "Disfraces y atuendos"
-  }
-},
-{
-  "model": "api.categoria",
-  "pk": 13,
-  "fields": {
-    "nombre": "ELECTRODOMESTICOS",
-    "descripcion": "ARTICULOS ELECTRONICOS"
-  }
-},
-{
-  "model": "api.categoria",
-  "pk": 14,
-  "fields": {
-    "nombre": "EQUIPOS DE COMPUTO",
-    "descripcion": "ELEMENTOS ELECTRONIOCOS"
-  }
-},
-{
-  "model": "api.proveedor",
-  "pk": 1,
-  "fields": {
-    "nombre": "Jabones",
-    "nit": "1234567",
-    "telefono": "3114964342",
-    "direccion": "CALLE 2 # 6-63 CALLE BARRIO SANTA BARBARA",
-    "email": "pablosanchez200512@gmail.com"
-  }
-},
-{
-  "model": "api.proveedor",
-  "pk": 2,
-  "fields": {
-    "nombre": "corbetta",
-    "nit": "123456",
-    "telefono": "3118688245",
-    "direccion": "CALLE 6 # 6-63 CALLE BARRIO SANTA BARBARA",
-    "email": "Kateovelencio@gmail.com"
-  }
-},
-{
-  "model": "api.proveedor",
-  "pk": 3,
-  "fields": {
-    "nombre": "Juegos SAS",
-    "nit": "123094834",
-    "telefono": "3114964256",
-    "direccion": "CALLE 2 # 6-63 CALLE BARRIO SANTA BARBARA",
-    "email": "Kateovelencio@gmail.com"
-  }
-},
-{
-  "model": "api.proveedor",
-  "pk": 4,
-  "fields": {
-    "nombre": "Casallas SAS",
-    "nit": "1256734768793",
-    "telefono": "3125826175",
-    "direccion": "CALLE 2 # 6-63 CALLE BARRIO SANTA BARBARA",
-    "email": "pablosanchez200512@gmail.com"
-  }
-},
-{
-  "model": "api.proveedor",
-  "pk": 5,
-  "fields": {
-    "nombre": "perro. s.a.s",
-    "nit": "567328987656278",
-    "telefono": "3126495773",
-    "direccion": "calle 4#12-4 zipaquira",
-    "email": "felipe@gmail.com"
-  }
-},
-{
-  "model": "api.proveedor",
-  "pk": 6,
-  "fields": {
-    "nombre": "DIOMEDEZ SAS",
-    "nit": "2342536323",
-    "telefono": "3142512563",
-    "direccion": "CALLE 2 # 6-63 CALLE BARRIO SANTA BARBARA",
-    "email": "KateAHJDovelencio@gmail.com"
-  }
-},
-{
-  "model": "api.proveedor",
-  "pk": 7,
-  "fields": {
-    "nombre": "Espitia s.a.s",
-    "nit": "123324",
-    "telefono": "3132458168",
-    "direccion": "CALLE 2 # 6-63 CALLE BARRIO SANTA BARBARA",
-    "email": "jvespitia@ucundinamarca.edu.co"
-  }
-},
-{
-  "model": "api.proveedor",
-  "pk": 8,
-  "fields": {
-    "nombre": "GILLERMO SAS",
-    "nit": "121323424",
-    "telefono": "324256241212",
-    "direccion": "CALLE 2 # 6-63 CALLE BARRIO SANTA BARBARA",
-    "email": "pablosanchez200512@gmail.com"
-  }
-},
-{
-  "model": "api.producto",
-  "pk": 1,
-  "fields": {
-    "codigo_barras": "708276",
-    "nombre": "jabon apol",
-    "descripcion": "jabon azul apol 230gm",
-    "categoria": 1,
-    "proveedor": 1,
-    "precio_compra": "2500.00",
-    "porcentaje_ganancia": "40.00",
-    "precio_venta": "3500.00",
-    "stock_actual": 6,
-    "stock_minimo": 2,
-    "imagen": "",
-    "fecha_creacion": "2025-06-10T18:33:00.571Z",
-    "fecha_actualizacion": "2025-06-10T18:33:00.613Z"
-  }
-},
-{
-  "model": "api.producto",
-  "pk": 2,
-  "fields": {
-    "codigo_barras": "1234567",
-    "nombre": "vaso",
-    "descripcion": "vaso de vidrio",
-    "categoria": 1,
-    "proveedor": 1,
-    "precio_compra": "2400.00",
-    "porcentaje_ganancia": "45.00",
-    "precio_venta": "3480.00",
-    "stock_actual": 5,
-    "stock_minimo": 5,
-    "imagen": "",
-    "fecha_creacion": "2025-06-10T20:02:49.005Z",
-    "fecha_actualizacion": "2025-06-10T20:02:49.032Z"
-  }
-},
-{
-  "model": "api.producto",
-  "pk": 3,
-  "fields": {
-    "codigo_barras": "1243564",
-    "nombre": "perro",
-    "descripcion": "juguete en forma de perro",
-    "categoria": 3,
-    "proveedor": 2,
-    "precio_compra": "3500.00",
-    "porcentaje_ganancia": "40.00",
-    "precio_venta": "4900.00",
-    "stock_actual": 22,
-    "stock_minimo": 5,
-    "imagen": "",
-    "fecha_creacion": "2025-06-10T20:08:32.002Z",
-    "fecha_actualizacion": "2025-06-10T20:08:32.131Z"
-  }
-},
-{
-  "model": "api.producto",
-  "pk": 10003,
-  "fields": {
-    "codigo_barras": "7382738824",
-    "nombre": "copa",
-    "descripcion": "elemento de vidrio",
-    "categoria": 5,
-    "proveedor": 2,
-    "precio_compra": "2300.00",
-    "porcentaje_ganancia": "40.00",
-    "precio_venta": "3220.00",
-    "stock_actual": 25,
-    "stock_minimo": 2,
-    "imagen": "",
-    "fecha_creacion": "2025-06-11T19:58:43.392Z",
-    "fecha_actualizacion": "2025-06-11T19:58:43.429Z"
-  }
-},
-{
-  "model": "api.producto",
-  "pk": 10004,
-  "fields": {
-    "codigo_barras": "12672712",
-    "nombre": "copa 3.5",
-    "descripcion": "copa grande",
-    "categoria": 5,
-    "proveedor": 2,
-    "precio_compra": "4500.00",
-    "porcentaje_ganancia": "50.00",
-    "precio_venta": "6750.00",
-    "stock_actual": 48,
-    "stock_minimo": 10,
-    "imagen": "",
-    "fecha_creacion": "2025-06-11T20:29:29.043Z",
-    "fecha_actualizacion": "2025-06-11T20:29:29.067Z"
-  }
-},
-{
-  "model": "api.producto",
-  "pk": 10005,
-  "fields": {
-    "codigo_barras": "1243454574",
-    "nombre": "Jabon polvo",
-    "descripcion": "jkjk",
-    "categoria": 1,
-    "proveedor": 1,
-    "precio_compra": "2800.00",
-    "porcentaje_ganancia": "50.00",
-    "precio_venta": "4200.00",
-    "stock_actual": 25,
-    "stock_minimo": 5,
-    "imagen": "",
-    "fecha_creacion": "2025-06-12T02:51:32.185Z",
-    "fecha_actualizacion": "2025-06-12T02:51:32.229Z"
-  }
-},
-{
-  "model": "api.producto",
-  "pk": 10006,
-  "fields": {
-    "codigo_barras": "45326153267",
-    "nombre": "Tasa",
-    "descripcion": "Tasa plástica",
-    "categoria": 6,
-    "proveedor": 4,
-    "precio_compra": "2500.00",
-    "porcentaje_ganancia": "50.00",
-    "precio_venta": "3750.00",
-    "stock_actual": 58,
-    "stock_minimo": 2,
-    "imagen": "",
-    "fecha_creacion": "2025-06-12T03:00:57.747Z",
-    "fecha_actualizacion": "2025-06-12T03:00:57.768Z"
-  }
-},
-{
-  "model": "api.producto",
-  "pk": 10007,
-  "fields": {
-    "codigo_barras": "7082768",
-    "nombre": "DOG",
-    "descripcion": "DJKFA",
-    "categoria": 4,
-    "proveedor": 4,
-    "precio_compra": "3000.00",
-    "porcentaje_ganancia": "50.00",
-    "precio_venta": "4500.00",
-    "stock_actual": 29,
-    "stock_minimo": 5,
-    "imagen": "",
-    "fecha_creacion": "2025-06-12T04:00:35.771Z",
-    "fecha_actualizacion": "2025-06-12T04:00:35.782Z"
-  }
-},
-{
-  "model": "api.producto",
-  "pk": 10008,
-  "fields": {
-    "codigo_barras": "453261532673535",
-    "nombre": "Tasa 15",
-    "descripcion": "hfdsklhfkjs",
-    "categoria": 6,
-    "proveedor": 4,
-    "precio_compra": "2500.00",
-    "porcentaje_ganancia": "50.00",
-    "precio_venta": "3750.00",
-    "stock_actual": 67,
-    "stock_minimo": 2,
-    "imagen": "",
-    "fecha_creacion": "2025-06-12T19:20:22.339Z",
-    "fecha_actualizacion": "2025-06-12T19:20:22.355Z"
-  }
-},
-{
-  "model": "api.producto",
-  "pk": 10009,
-  "fields": {
-    "codigo_barras": "21345442",
-    "nombre": "carro",
-    "descripcion": "hottwells",
-    "categoria": 7,
-    "proveedor": 3,
-    "precio_compra": "10000.00",
-    "porcentaje_ganancia": "45.00",
-    "precio_venta": "14500.00",
-    "stock_actual": 50,
-    "stock_minimo": 4,
-    "imagen": "",
-    "fecha_creacion": "2025-06-12T19:42:47.652Z",
-    "fecha_actualizacion": "2025-06-12T19:42:47.659Z"
-  }
-},
-{
-  "model": "api.producto",
-  "pk": 10010,
-  "fields": {
-    "codigo_barras": "6742472",
-    "nombre": "Gorro de navidad",
-    "descripcion": "gorro rojo de navidad",
-    "categoria": 9,
-    "proveedor": 2,
-    "precio_compra": "2000.00",
-    "porcentaje_ganancia": "49.95",
-    "precio_venta": "2999.00",
-    "stock_actual": 14,
-    "stock_minimo": 3,
-    "imagen": "",
-    "fecha_creacion": "2025-10-28T03:12:40.331Z",
-    "fecha_actualizacion": "2025-10-28T03:12:40.339Z"
-  }
-},
-{
-  "model": "api.producto",
-  "pk": 10011,
-  "fields": {
-    "codigo_barras": "345677",
-    "nombre": "VELA 01",
-    "descripcion": "VELAS NAVIDEÑAS",
-    "categoria": 9,
-    "proveedor": 2,
-    "precio_compra": "4000.05",
-    "porcentaje_ganancia": "50.00",
-    "precio_venta": "6000.08",
-    "stock_actual": 17,
-    "stock_minimo": 5,
-    "imagen": "",
-    "fecha_creacion": "2025-10-28T03:48:22.232Z",
-    "fecha_actualizacion": "2025-10-28T03:48:22.263Z"
-  }
-},
-{
-  "model": "api.producto",
-  "pk": 10012,
-  "fields": {
-    "codigo_barras": "132435343",
-    "nombre": "MASCARA",
-    "descripcion": "MASCARA HALLOWEN",
-    "categoria": 12,
-    "proveedor": 7,
-    "precio_compra": "4000.00",
-    "porcentaje_ganancia": "20.00",
-    "precio_venta": "4800.00",
-    "stock_actual": 50,
-    "stock_minimo": 15,
-    "imagen": "",
-    "fecha_creacion": "2026-05-05T13:02:29.669Z",
-    "fecha_actualizacion": "2026-05-05T13:02:29.688Z"
-  }
-},
-{
-  "model": "api.producto",
-  "pk": 10013,
-  "fields": {
-    "codigo_barras": "1132324",
-    "nombre": "RATON",
-    "descripcion": "ELEMENTOS",
-    "categoria": 14,
-    "proveedor": 8,
-    "precio_compra": "25000.00",
-    "porcentaje_ganancia": "15.00",
-    "precio_venta": "28750.00",
-    "stock_actual": 27,
-    "stock_minimo": 2,
-    "imagen": "",
-    "fecha_creacion": "2026-05-05T13:30:47.393Z",
-    "fecha_actualizacion": "2026-05-05T13:30:47.401Z"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10023,
-  "fields": {
-    "fecha_venta": "2025-06-11T23:34:08.466Z",
-    "total": "4900.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10024,
-  "fields": {
-    "fecha_venta": "2025-06-11T23:34:23.209Z",
-    "total": "3480.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10025,
-  "fields": {
-    "fecha_venta": "2025-06-12T02:56:10.660Z",
-    "total": "3480.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10026,
-  "fields": {
-    "fecha_venta": "2025-06-12T02:56:26.572Z",
-    "total": "4200.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10027,
-  "fields": {
-    "fecha_venta": "2025-06-12T03:29:17.464Z",
-    "total": "15000.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10028,
-  "fields": {
-    "fecha_venta": "2025-06-12T03:34:44.248Z",
-    "total": "30000.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10029,
-  "fields": {
-    "fecha_venta": "2025-06-12T03:59:47.792Z",
-    "total": "4900.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10030,
-  "fields": {
-    "fecha_venta": "2025-06-12T19:44:35.784Z",
-    "total": "725000.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10031,
-  "fields": {
-    "fecha_venta": "2025-10-28T03:07:39.468Z",
-    "total": "14000.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10032,
-  "fields": {
-    "fecha_venta": "2025-10-28T03:09:20.385Z",
-    "total": "27840.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10033,
-  "fields": {
-    "fecha_venta": "2025-10-28T03:09:36.100Z",
-    "total": "31320.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10034,
-  "fields": {
-    "fecha_venta": "2025-10-28T03:10:03.563Z",
-    "total": "6960.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10035,
-  "fields": {
-    "fecha_venta": "2025-10-28T04:02:37.825Z",
-    "total": "25250.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10036,
-  "fields": {
-    "fecha_venta": "2025-10-28T13:56:28.264Z",
-    "total": "14000.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10037,
-  "fields": {
-    "fecha_venta": "2026-03-13T14:15:05.140Z",
-    "total": "14000.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10038,
-  "fields": {
-    "fecha_venta": "2026-03-13T14:16:36.154Z",
-    "total": "6750.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10039,
-  "fields": {
-    "fecha_venta": "2026-04-16T12:54:24.579Z",
-    "total": "3500.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10040,
-  "fields": {
-    "fecha_venta": "2026-04-16T13:16:31.111Z",
-    "total": "24000.32",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10041,
-  "fields": {
-    "fecha_venta": "2026-04-16T13:23:11.993Z",
-    "total": "6000.08",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10042,
-  "fields": {
-    "fecha_venta": "2026-04-16T13:31:27.232Z",
-    "total": "6000.08",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10043,
-  "fields": {
-    "fecha_venta": "2026-04-16T17:08:12.996Z",
-    "total": "10500.08",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10044,
-  "fields": {
-    "fecha_venta": "2026-04-16T17:14:47.582Z",
-    "total": "10900.08",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10045,
-  "fields": {
-    "fecha_venta": "2026-05-04T14:54:00.894Z",
-    "total": "42738.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10046,
-  "fields": {
-    "fecha_venta": "2026-05-05T13:32:27.472Z",
-    "total": "143750.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10047,
-  "fields": {
-    "fecha_venta": "2026-09-17T16:14:10.469Z",
-    "total": "143750.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10048,
-  "fields": {
-    "fecha_venta": "2026-09-17T20:12:24.499Z",
-    "total": "115000.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10049,
-  "fields": {
-    "fecha_venta": "2026-09-17T20:12:25.985Z",
-    "total": "115000.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.venta",
-  "pk": 10050,
-  "fields": {
-    "fecha_venta": "2026-09-17T22:59:37.117Z",
-    "total": "32250.00",
-    "metodo_pago": "Efectivo",
-    "vendedor": "Vendedor_Predeterminado"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 1,
-  "fields": {
-    "venta": 10023,
-    "producto": 3,
-    "cantidad": 1,
-    "precio_unitario": "4900.00",
-    "subtotal": "4900.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 2,
-  "fields": {
-    "venta": 10024,
-    "producto": 2,
-    "cantidad": 1,
-    "precio_unitario": "3480.00",
-    "subtotal": "3480.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 3,
-  "fields": {
-    "venta": 10025,
-    "producto": 2,
-    "cantidad": 1,
-    "precio_unitario": "3480.00",
-    "subtotal": "3480.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 4,
-  "fields": {
-    "venta": 10026,
-    "producto": 10005,
-    "cantidad": 1,
-    "precio_unitario": "4200.00",
-    "subtotal": "4200.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 5,
-  "fields": {
-    "venta": 10027,
-    "producto": 10006,
-    "cantidad": 4,
-    "precio_unitario": "3750.00",
-    "subtotal": "15000.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 6,
-  "fields": {
-    "venta": 10028,
-    "producto": 10006,
-    "cantidad": 8,
-    "precio_unitario": "3750.00",
-    "subtotal": "30000.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 7,
-  "fields": {
-    "venta": 10029,
-    "producto": 3,
-    "cantidad": 1,
-    "precio_unitario": "4900.00",
-    "subtotal": "4900.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 8,
-  "fields": {
-    "venta": 10030,
-    "producto": 10009,
-    "cantidad": 50,
-    "precio_unitario": "14500.00",
-    "subtotal": "725000.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 9,
-  "fields": {
-    "venta": 10031,
-    "producto": 1,
-    "cantidad": 4,
-    "precio_unitario": "3500.00",
-    "subtotal": "14000.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 10,
-  "fields": {
-    "venta": 10032,
-    "producto": 2,
-    "cantidad": 8,
-    "precio_unitario": "3480.00",
-    "subtotal": "27840.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 11,
-  "fields": {
-    "venta": 10033,
-    "producto": 2,
-    "cantidad": 9,
-    "precio_unitario": "3480.00",
-    "subtotal": "31320.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 12,
-  "fields": {
-    "venta": 10034,
-    "producto": 2,
-    "cantidad": 2,
-    "precio_unitario": "3480.00",
-    "subtotal": "6960.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 13,
-  "fields": {
-    "venta": 10035,
-    "producto": 1,
-    "cantidad": 4,
-    "precio_unitario": "3500.00",
-    "subtotal": "14000.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 14,
-  "fields": {
-    "venta": 10035,
-    "producto": 10008,
-    "cantidad": 3,
-    "precio_unitario": "3750.00",
-    "subtotal": "11250.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 15,
-  "fields": {
-    "venta": 10036,
-    "producto": 1,
-    "cantidad": 4,
-    "precio_unitario": "3500.00",
-    "subtotal": "14000.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 16,
-  "fields": {
-    "venta": 10037,
-    "producto": 1,
-    "cantidad": 4,
-    "precio_unitario": "3500.00",
-    "subtotal": "14000.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 17,
-  "fields": {
-    "venta": 10038,
-    "producto": 10004,
-    "cantidad": 1,
-    "precio_unitario": "6750.00",
-    "subtotal": "6750.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 18,
-  "fields": {
-    "venta": 10039,
-    "producto": 1,
-    "cantidad": 1,
-    "precio_unitario": "3500.00",
-    "subtotal": "3500.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 19,
-  "fields": {
-    "venta": 10040,
-    "producto": 10011,
-    "cantidad": 4,
-    "precio_unitario": "6000.08",
-    "subtotal": "24000.32"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 20,
-  "fields": {
-    "venta": 10041,
-    "producto": 10011,
-    "cantidad": 1,
-    "precio_unitario": "6000.08",
-    "subtotal": "6000.08"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 21,
-  "fields": {
-    "venta": 10042,
-    "producto": 10011,
-    "cantidad": 1,
-    "precio_unitario": "6000.08",
-    "subtotal": "6000.08"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 22,
-  "fields": {
-    "venta": 10043,
-    "producto": 10011,
-    "cantidad": 1,
-    "precio_unitario": "6000.08",
-    "subtotal": "6000.08"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 23,
-  "fields": {
-    "venta": 10043,
-    "producto": 10007,
-    "cantidad": 1,
-    "precio_unitario": "4500.00",
-    "subtotal": "4500.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 24,
-  "fields": {
-    "venta": 10044,
-    "producto": 10011,
-    "cantidad": 1,
-    "precio_unitario": "6000.08",
-    "subtotal": "6000.08"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 25,
-  "fields": {
-    "venta": 10044,
-    "producto": 3,
-    "cantidad": 1,
-    "precio_unitario": "4900.00",
-    "subtotal": "4900.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 26,
-  "fields": {
-    "venta": 10045,
-    "producto": 10010,
-    "cantidad": 12,
-    "precio_unitario": "2999.00",
-    "subtotal": "35988.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 27,
-  "fields": {
-    "venta": 10045,
-    "producto": 10004,
-    "cantidad": 1,
-    "precio_unitario": "6750.00",
-    "subtotal": "6750.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 28,
-  "fields": {
-    "venta": 10046,
-    "producto": 10013,
-    "cantidad": 5,
-    "precio_unitario": "28750.00",
-    "subtotal": "143750.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 29,
-  "fields": {
-    "venta": 10047,
-    "producto": 10013,
-    "cantidad": 5,
-    "precio_unitario": "28750.00",
-    "subtotal": "143750.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 30,
-  "fields": {
-    "venta": 10048,
-    "producto": 10013,
-    "cantidad": 4,
-    "precio_unitario": "28750.00",
-    "subtotal": "115000.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 31,
-  "fields": {
-    "venta": 10049,
-    "producto": 10013,
-    "cantidad": 4,
-    "precio_unitario": "28750.00",
-    "subtotal": "115000.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 32,
-  "fields": {
-    "venta": 10050,
-    "producto": 10013,
-    "cantidad": 1,
-    "precio_unitario": "28750.00",
-    "subtotal": "28750.00"
-  }
-},
-{
-  "model": "api.detalleventa",
-  "pk": 33,
-  "fields": {
-    "venta": 10050,
-    "producto": 1,
-    "cantidad": 1,
-    "precio_unitario": "3500.00",
-    "subtotal": "3500.00"
-  }
-},
-{
-  "model": "aplicacion_movil.chatsession",
-  "pk": 1,
-  "fields": {
-    "usuario": [
-      "Vendedor"
-    ],
-    "estado": "idle",
-    "contexto": {},
-    "activa": true,
-    "creada_en": "2026-09-17T16:04:51.209Z",
-    "actualizada_en": "2026-09-17T23:08:52.906Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatsession",
-  "pk": 2,
-  "fields": {
-    "usuario": [
-      "pablo"
-    ],
-    "estado": "idle",
-    "contexto": {},
-    "activa": true,
-    "creada_en": "2026-09-17T17:01:40.866Z",
-    "actualizada_en": "2026-09-17T17:01:40.866Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatsession",
-  "pk": 3,
-  "fields": {
-    "usuario": [
-      "pablo"
-    ],
-    "estado": "idle",
-    "contexto": {},
-    "activa": true,
-    "creada_en": "2026-09-17T17:02:17.708Z",
-    "actualizada_en": "2026-09-17T17:02:17.708Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 1,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "¡Bienvenido al chat de INBOTF! Escribe \"ayuda\" para ver lo que puedo hacer por ti.",
-    "imagen": "",
-    "intent": "saludo",
-    "metadata": {},
-    "creado_en": "2026-09-17T16:04:51.247Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 2,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "ayuda",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T16:04:55.384Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 3,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "Soy el asistente de INBOTF. Puedes escribirme:\n• \"buscar [nombre o código]\" — consultar producto\n• \"stock bajo\" — productos con inventario bajo\n• \"ventas de hoy\" — resumen del día\n• \"identificar producto\" — luego envía una foto del producto\n• Envía una imagen directamente para validación visual o código de barras",
-    "imagen": "",
-    "intent": "ayuda",
-    "metadata": {},
-    "creado_en": "2026-09-17T16:04:55.390Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 4,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "identificar producto",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T16:05:06.534Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 5,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "Perfecto. Envíame una foto clara del producto o del código de barras.",
-    "imagen": "",
-    "intent": "identificar_foto",
-    "metadata": {},
-    "creado_en": "2026-09-17T16:05:06.543Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 6,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "",
-    "imagen": "chat/Imagen1.png",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T16:05:16.143Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 7,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "No encontré coincidencias visuales en el catálogo.",
-    "imagen": "",
-    "intent": "validar_imagen",
-    "metadata": {
-      "validation": {
-        "matched": false,
-        "method": "visual_similarity",
-        "confidence": 0.0,
-        "alternatives": []
-      }
-    },
-    "creado_en": "2026-09-17T16:05:16.207Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 8,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "ventas de hoy",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T16:05:51.330Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 9,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "stock bajo",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T16:05:55.539Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 10,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "Hay 1 producto(s) con stock bajo:\n• vaso: 5/5",
-    "imagen": "",
-    "intent": "stock_bajo",
-    "metadata": {
-      "count": 1,
-      "productos": [
-        2
-      ]
-    },
-    "creado_en": "2026-09-17T16:05:55.552Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 11,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "ayuda",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T16:06:14.109Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 12,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "Soy el asistente de INBOTF. Puedes escribirme:\n• \"buscar [nombre o código]\" — consultar producto\n• \"stock bajo\" — productos con inventario bajo\n• \"ventas de hoy\" — resumen del día\n• \"identificar producto\" — luego envía una foto del producto\n• Envía una imagen directamente para validación visual o código de barras",
-    "imagen": "",
-    "intent": "ayuda",
-    "metadata": {},
-    "creado_en": "2026-09-17T16:06:14.113Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 13,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "stock bajo",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T16:06:49.343Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 14,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "Hay 1 producto(s) con stock bajo:\n• vaso: 5/5",
-    "imagen": "",
-    "intent": "stock_bajo",
-    "metadata": {
-      "count": 1,
-      "productos": [
-        2
-      ]
-    },
-    "creado_en": "2026-09-17T16:06:49.392Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 15,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "ventas de hoy",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T16:06:58.021Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 16,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "identificar producto",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T16:07:00.805Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 17,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "Perfecto. Envíame una foto clara del producto o del código de barras.",
-    "imagen": "",
-    "intent": "identificar_foto",
-    "metadata": {},
-    "creado_en": "2026-09-17T16:07:00.813Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 18,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "",
-    "imagen": "chat/Linea_del_tiempo_Telecomunicaciones.png",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T16:07:26.638Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 19,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "No encontré coincidencias visuales en el catálogo.",
-    "imagen": "",
-    "intent": "validar_imagen",
-    "metadata": {
-      "validation": {
-        "matched": false,
-        "method": "visual_similarity",
-        "confidence": 0.0,
-        "alternatives": []
-      }
-    },
-    "creado_en": "2026-09-17T16:07:26.739Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 20,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "ventas de hoy",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T16:14:13.952Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 21,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "ventas de hoy",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T17:01:19.323Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 22,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "identificar producto",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T17:01:21.513Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 23,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "Perfecto. Envíame una foto clara del producto o del código de barras.",
-    "imagen": "",
-    "intent": "identificar_foto",
-    "metadata": {},
-    "creado_en": "2026-09-17T17:01:21.526Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 24,
-  "fields": {
-    "session": 3,
-    "rol": "bot",
-    "texto": "Ventas de hoy (2026-09-17):\n  Transacciones: 1\n  Total: $143,750.00\n  Más vendidos:\n  • RATON: 5 uds.",
-    "imagen": "",
-    "intent": "ventas_hoy",
-    "metadata": {
-      "fecha": "2026-09-17",
-      "total_ventas": 143750.0,
-      "cantidad_ventas": 1
-    },
-    "creado_en": "2026-09-17T17:02:18.154Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 25,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "quiero revisar el precio de un producto",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T17:36:40.868Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 26,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "Estoy esperando la foto del producto. Adjunta una imagen en tu mensaje.",
-    "imagen": "",
-    "intent": "identificar_foto",
-    "metadata": {},
-    "creado_en": "2026-09-17T17:36:40.913Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 27,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "puedes revisar en el inventario}",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T17:37:15.659Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 28,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "Estoy esperando la foto del producto. Adjunta una imagen en tu mensaje.",
-    "imagen": "",
-    "intent": "identificar_foto",
-    "metadata": {},
-    "creado_en": "2026-09-17T17:37:15.665Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 29,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "sobre el stock bajo",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T17:37:25.179Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 30,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "Estoy esperando la foto del producto. Adjunta una imagen en tu mensaje.",
-    "imagen": "",
-    "intent": "identificar_foto",
-    "metadata": {},
-    "creado_en": "2026-09-17T17:37:25.184Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 31,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "",
-    "imagen": "chat/Imagen1_8CKVmVg.png",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T17:37:34.583Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 32,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "No encontré coincidencias visuales en el catálogo.",
-    "imagen": "",
-    "intent": "validar_imagen",
-    "metadata": {
-      "validation": {
-        "matched": false,
-        "method": "visual_similarity",
-        "confidence": 0.0,
-        "alternatives": []
-      }
-    },
-    "creado_en": "2026-09-17T17:37:34.621Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 33,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "ventas de hoy",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T19:07:44.935Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 34,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "Ventas de hoy (2026-09-17):\n  Transacciones: 1\n  Total: $143,750.00\n  Más vendidos:\n  • RATON: 5 uds.",
-    "imagen": "",
-    "intent": "ventas_hoy",
-    "metadata": {
-      "fecha": "2026-09-17",
-      "total_ventas": 143750.0,
-      "cantidad_ventas": 1
-    },
-    "creado_en": "2026-09-17T19:07:45.007Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 35,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "ayuda",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T19:31:18.561Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 36,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "Soy el asistente de INBOTF. Puedes escribirme:\n• \"buscar [nombre o código]\" — consultar producto\n• \"stock bajo\" — productos con inventario bajo\n• \"ventas de hoy\" — resumen del día\n• \"identificar producto\" — luego envía una foto del producto\n• Envía una imagen directamente para validación visual o código de barras",
-    "imagen": "",
-    "intent": "ayuda",
-    "metadata": {},
-    "creado_en": "2026-09-17T19:31:18.585Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 37,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "ayuda",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T19:31:22.543Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 38,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "Soy el asistente de INBOTF. Puedes escribirme:\n• \"buscar [nombre o código]\" — consultar producto\n• \"stock bajo\" — productos con inventario bajo\n• \"ventas de hoy\" — resumen del día\n• \"identificar producto\" — luego envía una foto del producto\n• Envía una imagen directamente para validación visual o código de barras",
-    "imagen": "",
-    "intent": "ayuda",
-    "metadata": {},
-    "creado_en": "2026-09-17T19:31:22.546Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 39,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "stock bajo",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T19:31:24.442Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 40,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "Hay 1 producto(s) con stock bajo:\n• vaso: 5/5",
-    "imagen": "",
-    "intent": "stock_bajo",
-    "metadata": {
-      "count": 1,
-      "productos": [
-        2
-      ]
-    },
-    "creado_en": "2026-09-17T19:31:24.455Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 41,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "ventas de hoy",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T19:31:30.274Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 42,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "Ventas de hoy (2026-09-17):\n  Transacciones: 1\n  Total: $143,750.00\n  Más vendidos:\n  • RATON: 5 uds.",
-    "imagen": "",
-    "intent": "ventas_hoy",
-    "metadata": {
-      "fecha": "2026-09-17",
-      "total_ventas": 143750.0,
-      "cantidad_ventas": 1
-    },
-    "creado_en": "2026-09-17T19:31:30.303Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 43,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "ayuda",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T21:46:23.220Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 44,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "Soy el asistente de INBOTF. Puedes escribirme:\n• \"buscar [nombre o código]\" — consultar producto\n• \"stock bajo\" — productos con inventario bajo\n• \"ventas de hoy\" — resumen del día\n• \"identificar producto\" — luego envía una foto del producto\n• Envía una imagen directamente para validación visual o código de barras",
-    "imagen": "",
-    "intent": "ayuda",
-    "metadata": {},
-    "creado_en": "2026-09-17T21:46:23.257Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 45,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "stock bajo",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T22:56:36.688Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 46,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "Hay 1 producto(s) con stock bajo:\n• vaso: 5/5",
-    "imagen": "",
-    "intent": "stock_bajo",
-    "metadata": {
-      "count": 1,
-      "productos": [
-        2
-      ]
-    },
-    "creado_en": "2026-09-17T22:56:36.737Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 47,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "ayuda",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T23:08:20.796Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 48,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "Soy el asistente de INBOTF. Puedes escribirme:\n• \"buscar [nombre o código]\" — consultar producto\n• \"stock bajo\" — productos con inventario bajo\n• \"ventas de hoy\" — resumen del día\n• \"identificar producto\" — luego envía una foto del producto\n• Envía una imagen directamente para validación visual o código de barras",
-    "imagen": "",
-    "intent": "ayuda",
-    "metadata": {},
-    "creado_en": "2026-09-17T23:08:20.827Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 49,
-  "fields": {
-    "session": 1,
-    "rol": "user",
-    "texto": "ventas de hoy",
-    "imagen": "",
-    "intent": "",
-    "metadata": {},
-    "creado_en": "2026-09-17T23:08:52.841Z"
-  }
-},
-{
-  "model": "aplicacion_movil.chatmessage",
-  "pk": 50,
-  "fields": {
-    "session": 1,
-    "rol": "bot",
-    "texto": "Ventas de hoy (2026-09-17):\n  Transacciones: 4\n  Total: $406,000.00\n  Más vendidos:\n  • RATON: 14 uds.\n  • jabon apol: 1 uds.",
-    "imagen": "",
-    "intent": "ventas_hoy",
-    "metadata": {
-      "fecha": "2026-09-17",
-      "total_ventas": 406000.0,
-      "cantidad_ventas": 4
-    },
-    "creado_en": "2026-09-17T23:08:52.900Z"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 1,
-  "fields": {
-    "action_time": "2025-06-11T17:24:03.108Z",
-    "user": [
-      "pablo"
-    ],
-    "content_type": [
-      "auth",
-      "user"
-    ],
-    "object_id": "2",
-    "object_repr": "Administrador",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 2,
-  "fields": {
-    "action_time": "2025-06-11T17:24:46.970Z",
-    "user": [
-      "pablo"
-    ],
-    "content_type": [
-      "auth",
-      "user"
-    ],
-    "object_id": "3",
-    "object_repr": "Vendedor",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 3,
-  "fields": {
-    "action_time": "2025-06-11T17:27:38.284Z",
-    "user": [
-      "pablo"
-    ],
-    "content_type": [
-      "auth",
-      "user"
-    ],
-    "object_id": "3",
-    "object_repr": "Vendedor",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\", \"User permissions\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 4,
-  "fields": {
-    "action_time": "2025-06-11T17:28:50.825Z",
-    "user": [
-      "pablo"
-    ],
-    "content_type": [
-      "auth",
-      "user"
-    ],
-    "object_id": "2",
-    "object_repr": "Administrador",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 5,
-  "fields": {
-    "action_time": "2025-06-11T17:32:44.835Z",
-    "user": [
-      "pablo"
-    ],
-    "content_type": [
-      "auth",
-      "group"
-    ],
-    "object_id": "1",
-    "object_repr": "vendedores",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 6,
-  "fields": {
-    "action_time": "2025-06-11T17:32:54.745Z",
-    "user": [
-      "pablo"
-    ],
-    "content_type": [
-      "auth",
-      "group"
-    ],
-    "object_id": "1",
-    "object_repr": "vendedores",
-    "action_flag": 2,
-    "change_message": "[]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 7,
-  "fields": {
-    "action_time": "2025-06-11T17:33:50.481Z",
-    "user": [
-      "pablo"
-    ],
-    "content_type": [
-      "auth",
-      "group"
-    ],
-    "object_id": "2",
-    "object_repr": "Administradores",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 8,
-  "fields": {
-    "action_time": "2025-06-11T17:34:52.730Z",
-    "user": [
-      "pablo"
-    ],
-    "content_type": [
-      "auth",
-      "user"
-    ],
-    "object_id": "3",
-    "object_repr": "Vendedor",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Groups\", \"User permissions\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 9,
-  "fields": {
-    "action_time": "2025-06-11T17:35:01.164Z",
-    "user": [
-      "pablo"
-    ],
-    "content_type": [
-      "auth",
-      "user"
-    ],
-    "object_id": "2",
-    "object_repr": "Administrador",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 10,
-  "fields": {
-    "action_time": "2025-06-11T17:38:58.466Z",
-    "user": [
-      "pablo"
-    ],
-    "content_type": [
-      "auth",
-      "user"
-    ],
-    "object_id": "2",
-    "object_repr": "Administrador",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Last login\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 11,
-  "fields": {
-    "action_time": "2025-06-11T17:41:09.974Z",
-    "user": [
-      "pablo"
-    ],
-    "content_type": [
-      "auth",
-      "user"
-    ],
-    "object_id": "2",
-    "object_repr": "Administrador",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 12,
-  "fields": {
-    "action_time": "2025-06-11T18:21:29.398Z",
-    "user": [
-      "pablo"
-    ],
-    "content_type": [
-      "auth",
-      "group"
-    ],
-    "object_id": "1",
-    "object_repr": "vendedor",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 13,
-  "fields": {
-    "action_time": "2025-06-11T18:22:26.075Z",
-    "user": [
-      "pablo"
-    ],
-    "content_type": [
-      "auth",
-      "group"
-    ],
-    "object_id": "1",
-    "object_repr": "Vendedor",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 14,
-  "fields": {
-    "action_time": "2025-06-11T19:35:16.264Z",
-    "user": [
-      "pablo"
-    ],
-    "content_type": [
-      "auth",
-      "group"
-    ],
-    "object_id": "1",
-    "object_repr": "Vendedor",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 15,
-  "fields": {
-    "action_time": "2025-06-11T19:39:35.265Z",
-    "user": [
-      "pablo"
-    ],
-    "content_type": [
-      "auth",
-      "group"
-    ],
-    "object_id": "2",
-    "object_repr": "Administradores",
-    "action_flag": 2,
-    "change_message": "[]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 16,
-  "fields": {
-    "action_time": "2025-06-11T19:41:56.094Z",
-    "user": [
-      "pablo"
-    ],
-    "content_type": [
-      "auth",
-      "group"
-    ],
-    "object_id": "2",
-    "object_repr": "Administrador",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 17,
-  "fields": {
-    "action_time": "2025-06-11T19:48:09.929Z",
-    "user": [
-      "pablo"
-    ],
-    "content_type": [
-      "auth",
-      "group"
-    ],
-    "object_id": "2",
-    "object_repr": "Administrador",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
-  }
-}
 ]

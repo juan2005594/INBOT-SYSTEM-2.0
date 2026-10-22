@@ -272,10 +272,21 @@
                 return cookieValue;
             }
 
+            const token = localStorage.getItem('authToken');
+            function getAuthHeaders(extraHeaders = {}) {
+                const headers = { ...extraHeaders };
+                if (token) {
+                    headers['Authorization'] = `Token ${token}`;
+                }
+                return headers;
+            }
+
             // Función para cargar proveedores
             async function loadSuppliers() {
                 try {
-                    const response = await fetch('/core-api/proveedores/');
+                    const response = await fetch('/core-api/proveedores/', {
+                        headers: getAuthHeaders()
+                    });
                     suppliers = (await response.json()).results || [];
                     proveedorSelect.innerHTML = '<option value="">Seleccione un proveedor</option>';
                     suppliers.forEach(prov => {
@@ -287,11 +298,11 @@
 
                     // Cargar productos (TODOS, no solo la primera página)
                     products = [];
-                    let nextProductUrl = '/core-api/productos/';
-                    
                     let page = 1;
                     while (true) {
-                        const productsResponse = await fetch(`/core-api/productos/?page=${page}&format=json`);
+                        const productsResponse = await fetch(`/core-api/productos/?page=${page}&format=json`, {
+                            headers: getAuthHeaders()
+                        });
                         const productsData = await productsResponse.json();
                         
                         if (productsData.results && productsData.results.length > 0) {
@@ -308,7 +319,9 @@
                     
                     // Cargar categorías
                     try {
-                        const categoriesResponse = await fetch('/core-api/categorias/');
+                        const categoriesResponse = await fetch('/core-api/categorias/', {
+                            headers: getAuthHeaders()
+                        });
                         categories = (await categoriesResponse.json()).results || [];
                         console.log('Categorías cargadas:', categories);
                     } catch (error) {
@@ -330,7 +343,9 @@
             // Función para cargar categorías
             async function loadCategories() {
                 try {
-                    const response = await fetch('/core-api/categorias/');
+                    const response = await fetch('/core-api/categorias/', {
+                        headers: getAuthHeaders()
+                    });
                     categories = (await response.json()).results || [];
                 } catch (error) {
                     console.error('Error al cargar categorías:', error);
@@ -342,11 +357,11 @@
                 try {
                     // Cargar TODOS los productos (todas las páginas)
                     products = [];
-                    let nextProductUrl = '/core-api/productos/';
-                    
                     let page = 1;
                     while (true) {
-                        const response = await fetch(`/core-api/productos/?page=${page}&format=json`);
+                        const response = await fetch(`/core-api/productos/?page=${page}&format=json`, {
+                            headers: getAuthHeaders()
+                        });
                         const productsData = await response.json();
                         
                         if (productsData.results && productsData.results.length > 0) {
@@ -529,10 +544,10 @@
                     console.log("Enviando factura de compra:", payload);
                     const response = await fetch(apiURL, {
                         method: 'POST',
-                        headers: {
+                        headers: getAuthHeaders({
                             'Content-Type': 'application/json',
                             'X-CSRFToken': getCookie('csrftoken')
-                        },
+                        }),
                         body: JSON.stringify(payload)
                     });
 

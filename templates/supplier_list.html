@@ -190,6 +190,15 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const token = localStorage.getItem('authToken');
+            function getAuthHeaders(extraHeaders = {}) {
+                const headers = { ...extraHeaders };
+                if (token) {
+                    headers['Authorization'] = `Token ${token}`;
+                }
+                return headers;
+            }
+
             const supplierList = document.getElementById('supplier-list');
             const apiURL = '/core-api/proveedores/'; // URL de tu API de proveedores
             const addSupplierForm = document.getElementById('addSupplierForm');
@@ -198,7 +207,9 @@
             // Función para cargar proveedores
             async function loadSuppliers() {
                 try {
-                    const response = await fetch(apiURL);
+                    const response = await fetch(apiURL, {
+                        headers: getAuthHeaders()
+                    });
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
                     }
@@ -242,9 +253,9 @@
                 try {
                     const response = await fetch(apiURL, {
                         method: 'POST',
-                        headers: {
+                        headers: getAuthHeaders({
                             'Content-Type': 'application/json',
-                        },
+                        }),
                         body: JSON.stringify(supplierData),
                     });
 

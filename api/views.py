@@ -424,6 +424,15 @@ class LoginView(APIView):
         username = serializer.validated_data['username']
         password = serializer.validated_data['password']
 
+        # Búsqueda insensible a mayúsculas para compatibilidad universal (PostgreSQL en Render, etc.)
+        from django.contrib.auth.models import User
+        try:
+            matched_user = User.objects.filter(username__iexact=username).first()
+            if matched_user:
+                username = matched_user.username
+        except Exception:
+            pass
+
         user = authenticate(request, username=username, password=password)
 
         if user is not None:

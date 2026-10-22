@@ -179,6 +179,15 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const token = localStorage.getItem('authToken');
+            function getAuthHeaders(extraHeaders = {}) {
+                const headers = { ...extraHeaders };
+                if (token) {
+                    headers['Authorization'] = `Token ${token}`;
+                }
+                return headers;
+            }
+
             const categoryList = document.getElementById('category-list');
             const addCategoryForm = document.getElementById('addCategoryForm');
             const formMessage = document.getElementById('form-message');
@@ -187,7 +196,9 @@
             // Función para cargar categorías
             async function loadCategories() {
                 try {
-                    const response = await fetch(apiURL);
+                    const response = await fetch(apiURL, {
+                        headers: getAuthHeaders()
+                    });
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
                     }
@@ -228,9 +239,9 @@
                 try {
                     const response = await fetch(apiURL, {
                         method: 'POST',
-                        headers: {
+                        headers: getAuthHeaders({
                             'Content-Type': 'application/json',
-                        },
+                        }),
                         body: JSON.stringify(categoryData),
                     });
 

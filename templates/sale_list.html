@@ -260,6 +260,23 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const token = localStorage.getItem('authToken');
+            const storedUsername = localStorage.getItem('username');
+
+            function getAuthHeaders(extraHeaders = {}) {
+                const headers = { ...extraHeaders };
+                if (token) {
+                    headers['Authorization'] = `Token ${token}`;
+                }
+                return headers;
+            }
+
+            // Auto-asignar el vendedor si está en sesión
+            const vendedorInput = document.getElementById('vendedor');
+            if (vendedorInput && storedUsername) {
+                vendedorInput.value = storedUsername;
+            }
+
             const salesContainer = document.getElementById('sales-container');
             const apiBaseURL = '/core-api/ventas/'; // URL base para POST (crear venta)
             const listUrl = '/core-api/ventas/?page=1&ordering=-id'; // URL para GET (ventas más recientes)
@@ -275,11 +292,11 @@
                 try {
                     // Cargar TODOS los productos (todas las páginas)
                     products = [];
-                    let nextUrl = '/core-api/productos/';
-                    
                     let page = 1;
                     while (true) {
-                        const productsResponse = await fetch(`/core-api/productos/?page=${page}&format=json`);
+                        const productsResponse = await fetch(`/core-api/productos/?page=${page}&format=json`, {
+                            headers: getAuthHeaders()
+                        });
                         const data = await productsResponse.json();
                         
                         if (data.results && data.results.length > 0) {
@@ -363,7 +380,9 @@
             // Función para cargar ventas
             async function loadSales() {
                 try {
-                    const response = await fetch(listUrl);
+                    const response = await fetch(listUrl, {
+                        headers: getAuthHeaders()
+                    });
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
                     }
@@ -438,9 +457,9 @@
                 try {
                     const response = await fetch(apiBaseURL, {
                         method: 'POST',
-                        headers: {
+                        headers: getAuthHeaders({
                             'Content-Type': 'application/json',
-                        },
+                        }),
                         body: JSON.stringify(saleData),
                     });
 
