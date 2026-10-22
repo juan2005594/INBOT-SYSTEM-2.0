@@ -1,0 +1,454 @@
+{
+  "info": {
+    "_postman_id": "a9b8c7d6-e5f4-4a3b-8c2d-1e0f9a8b7c6d",
+    "name": "API Inbot System - Auditoría y Pruebas de Seguridad",
+    "description": "Colección de pruebas de seguridad y auditoría para Inbot System (Universidad de Cundinamarca - MEDIT). Incluye pruebas positivas, negativas, autenticación, autorización RBAC y validación de entradas.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000",
+      "type": "string"
+    },
+    {
+      "key": "admin_token",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "vendedor_token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "01. Autenticación y Tokens",
+      "item": [
+        {
+          "name": "POST Login - Credenciales Válidas (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/core-api/login/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "core-api",
+                "login",
+                ""
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST Login - Credenciales Válidas (Vendedor)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"Vendedor\",\n  \"password\": \"vendedor123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/core-api/login/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "core-api",
+                "login",
+                ""
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST Login - Password Incorrecta (Prueba Negativa)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"contraseña_erronea\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/core-api/login/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "core-api",
+                "login",
+                ""
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST Login - Usuario Inexistente (Prueba Negativa)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"usuario_fantasma\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/core-api/login/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "core-api",
+                "login",
+                ""
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST Login - Campos Vacíos (Validación)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"\",\n  \"password\": \"\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/core-api/login/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "core-api",
+                "login",
+                ""
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST Logout - Revocación de Token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token {{admin_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/core-api/logout/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "core-api",
+                "logout",
+                ""
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "02. Control de Acceso y Autorización (RBAC)",
+      "item": [
+        {
+          "name": "GET Stock Bajo - Sin Token (Prueba Negativa)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/core-api/productos/stock_bajo/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "core-api",
+                "productos",
+                "stock_bajo",
+                ""
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET Stock Bajo - Token Inválido (Prueba Negativa)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token token_invalido_12345"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/core-api/productos/stock_bajo/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "core-api",
+                "productos",
+                "stock_bajo",
+                ""
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET Stock Bajo - Token Válido Admin (Prueba Positiva)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token {{admin_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/core-api/productos/stock_bajo/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "core-api",
+                "productos",
+                "stock_bajo",
+                ""
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST Crear Producto - Rol Vendedor (RBAC Negativa)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token {{vendedor_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"codigo_barras\": \"TEST_UNAUTH\",\n  \"nombre\": \"Producto No Autorizado\",\n  \"descripcion\": \"Intento de escalamiento\",\n  \"categoria\": 1,\n  \"proveedor\": 1,\n  \"precio_compra\": 5000,\n  \"porcentaje_ganancia\": 30,\n  \"stock_actual\": 10,\n  \"stock_minimo\": 2\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/core-api/productos/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "core-api",
+                "productos",
+                ""
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "03. Validaciones de Entrada",
+      "item": [
+        {
+          "name": "POST Categoría - Campo Obligatorio Faltante",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token {{admin_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"descripcion\": \"Categoría sin nombre proporcionado\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/core-api/categorias/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "core-api",
+                "categorias",
+                ""
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST Proveedor - Formato Email Inválido",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token {{admin_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Proveedor Test Error\",\n  \"nit\": \"11223344\",\n  \"telefono\": \"3101234567\",\n  \"direccion\": \"Av Siempre Viva 123\",\n  \"email\": \"correo_sin_formato_arroba\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/core-api/proveedores/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "core-api",
+                "proveedores",
+                ""
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST Producto - Ganancia Negativa (MinValueValidator)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token {{admin_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"codigo_barras\": \"TEST_VAL_NEG\",\n  \"nombre\": \"Producto Invalido\",\n  \"descripcion\": \"Prueba regla de negocio\",\n  \"categoria\": 1,\n  \"proveedor\": 1,\n  \"precio_compra\": 10000,\n  \"porcentaje_ganancia\": -25.0,\n  \"stock_actual\": 5,\n  \"stock_minimo\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/core-api/productos/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "core-api",
+                "productos",
+                ""
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "04. Carga y Validación de Archivos",
+      "item": [
+        {
+          "name": "POST Validar Imagen - Archivo Válido",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token {{admin_token}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "imagen",
+                  "type": "file",
+                  "src": "media/chat/Imagen1.png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/mobile-api/chat/validar-imagen/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "mobile-api",
+                "chat",
+                "validar-imagen",
+                ""
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST Validar Imagen - Sin Archivo Adjunto",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token {{admin_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/mobile-api/chat/validar-imagen/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "mobile-api",
+                "chat",
+                "validar-imagen",
+                ""
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

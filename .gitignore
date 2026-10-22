@@ -28,3 +28,7 @@ __pycache__/
 .DS_Store
 Thumbs.db
 staticfiles/
+
+# Archivos comprimidos y logs
+*.zip
+logs/
