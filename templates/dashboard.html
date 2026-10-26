@@ -667,6 +667,7 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
+                                    <th>Foto</th>
                                     <th>ID</th>
                                     <th>Nombre</th>
                                     <th>Código de Barras</th>
@@ -677,6 +678,7 @@
                                     <th>Stock Mínimo</th>
                                     <th>Categoría</th>
                                     <th>Proveedor</th>
+                                    <th>Acción</th>
                                 </tr>
                             </thead>
                             <tbody id="productos-table-body">
@@ -686,6 +688,62 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para Actualizar/Agregar Foto a Producto Existente -->
+        <div class="modal fade" id="dashboardPhotoModal" tabindex="-1" aria-labelledby="dashboardPhotoModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="dashboardPhotoModalLabel"><i class="bi bi-camera me-2 text-info"></i>Gestionar Foto de Producto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label text-muted small text-uppercase fw-bold">Producto Seleccionado</label>
+                            <div id="dashPhotoProductName" class="fw-bold fs-5 text-white"></div>
+                            <input type="hidden" id="dashPhotoProductId">
+                        </div>
+                        <div class="mb-3 text-center">
+                            <label class="form-label d-block text-muted small text-uppercase fw-bold">Foto Actual / Vista Previa</label>
+                            <div id="dashPhotoPreviewBox" style="width: 180px; height: 180px; margin: 0 auto; border-radius: 14px; border: 2px dashed rgba(99, 102, 241, 0.4); display: flex; align-items: center; justify-content: center; overflow: hidden; background: rgba(15, 23, 42, 0.6);">
+                                <img id="dashPhotoPreviewImg" src="" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                                <div id="dashPhotoNoImg" class="text-secondary text-center p-3">
+                                    <i class="bi bi-image fs-1 d-block mb-1 text-muted"></i>
+                                    <span class="small">Sin fotografía asignada</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dashPhotoInput" class="form-label">Seleccionar Nueva Imagen</label>
+                            <input type="file" class="form-control" id="dashPhotoInput" accept="image/*">
+                            <div class="form-text text-muted">Formatos recomendados: JPG, PNG, WEBP.</div>
+                        </div>
+                        <div id="dashPhotoAlert" class="alert d-none py-2"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" id="btnSaveDashboardPhoto">
+                            <i class="bi bi-cloud-arrow-up me-1"></i>Guardar Foto
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para Vista Previa de Imagen Ampliada -->
+        <div class="modal fade" id="imagePreviewModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <div class="modal-header border-0 pb-0">
+                        <h6 class="modal-title text-white" id="imagePreviewTitle">Foto del Producto</h6>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center p-4">
+                        <img id="imagePreviewImg" src="" style="max-width: 100%; max-height: 70vh; border-radius: 12px; object-fit: contain; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
                     </div>
                 </div>
             </div>
@@ -802,6 +860,16 @@
                                 <select class="form-select" id="productProveedor" required>
                                     <!-- Options populated by JS -->
                                 </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="productImagen" class="form-label">Foto del Producto (Visualización / Identificación)</label>
+                                <input type="file" class="form-control" id="productImagen" accept="image/*">
+                                <div id="addProductImagePreviewBox" class="mt-2 text-center" style="display: none;">
+                                    <img id="addProductImagePreviewImg" src="" alt="Vista previa" style="max-height: 130px; max-width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2);">
+                                    <button type="button" class="btn btn-sm btn-outline-danger mt-2 d-block mx-auto" id="btnClearAddProductImage">
+                                        <i class="bi bi-x-circle me-1"></i>Quitar foto
+                                    </button>
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Guardar Producto</button>
                         </form>
@@ -1205,17 +1273,18 @@
                 headers['Authorization'] = `Token ${token}`;
             }
 
-            if (data) {
-                headers['Content-Type'] = 'application/json';
-            }
-
             const config = {
                 method: method,
                 headers: headers,
             };
 
             if (data) {
-                config.body = JSON.stringify(data);
+                if (data instanceof FormData) {
+                    config.body = data;
+                } else {
+                    headers['Content-Type'] = 'application/json';
+                    config.body = JSON.stringify(data);
+                }
                 console.log(`DEBUG: fetchAPI - Enviando datos a ${endpoint}:`, data);
             }
 
@@ -1479,16 +1548,46 @@
                     tableBody.innerHTML = '';
                     products.forEach(product => {
                         const row = tableBody.insertRow();
+                        
+                        // Foto
+                        const cellFoto = row.insertCell();
+                        cellFoto.style.verticalAlign = 'middle';
+                        cellFoto.style.textAlign = 'center';
+                        let imgUrl = product.imagen;
+                        if (imgUrl && !imgUrl.startsWith('http')) {
+                            imgUrl = `${window.location.origin}${imgUrl.startsWith('/') ? '' : '/'}${imgUrl}`;
+                        }
+                        if (imgUrl) {
+                            cellFoto.innerHTML = `<img src="${imgUrl}" alt="${product.nombre}" style="width: 44px; height: 44px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255,255,255,0.25); cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'" onclick="showDashboardImagePreview('${imgUrl}', '${encodeURIComponent(product.nombre)}')">`;
+                        } else {
+                            cellFoto.innerHTML = `<span class="badge" style="background: rgba(148, 163, 184, 0.2); color: #cbd5e1; font-size: 0.72rem; padding: 5px 8px;"><i class="bi bi-image me-1"></i>Sin foto</span>`;
+                        }
+
                         row.insertCell().innerText = product.id;
                         row.insertCell().innerText = product.nombre;
                         row.insertCell().innerText = product.codigo_barras;
-                        row.insertCell().innerText = product.precio_compra;
-                        row.insertCell().innerText = product.porcentaje_ganancia;
-                        row.insertCell().innerText = product.precio_venta;
-                        row.insertCell().innerText = product.stock_actual;
+                        row.insertCell().innerText = `$${parseFloat(product.precio_compra || 0).toLocaleString('es-CO')}`;
+                        row.insertCell().innerText = `${product.porcentaje_ganancia}%`;
+                        row.insertCell().innerText = `$${parseFloat(product.precio_venta || 0).toLocaleString('es-CO')}`;
+                        
+                        // Stock actual con badge
+                        const cellStock = row.insertCell();
+                        const isLow = product.stock_actual <= product.stock_minimo;
+                        cellStock.innerHTML = `<span class="badge ${isLow ? 'bg-danger' : 'bg-success'}">${product.stock_actual}</span>`;
+
                         row.insertCell().innerText = product.stock_minimo;
-                        row.insertCell().innerText = product.categoria_nombre; // Assuming serializer provides this
-                        row.insertCell().innerText = product.proveedor_nombre; // Assuming serializer provides this
+                        row.insertCell().innerText = product.categoria_nombre || '-';
+                        row.insertCell().innerText = product.proveedor_nombre || '-';
+
+                        // Acciones
+                        const cellAccion = row.insertCell();
+                        cellAccion.style.verticalAlign = 'middle';
+                        const encodedNombre = encodeURIComponent(product.nombre);
+                        cellAccion.innerHTML = `
+                            <button type="button" class="btn btn-sm ${product.imagen ? 'btn-outline-info' : 'btn-info'} d-flex align-items-center gap-1" onclick="openDashboardPhotoModal(${product.id}, '${encodedNombre}', '${imgUrl || ''}')">
+                                <i class="bi bi-camera"></i> <span>${product.imagen ? 'Cambiar Foto' : 'Agregar Foto'}</span>
+                            </button>
+                        `;
                     });
                 }
 
@@ -2161,7 +2260,146 @@
             }
         });
 
-        // Event Listener for Add Product Form
+        // --- Gestión de Fotos de Producto en Dashboard ---
+
+        // Vista previa de imagen al agregar nuevo producto
+        const productImagenInput = document.getElementById('productImagen');
+        const addProductImagePreviewBox = document.getElementById('addProductImagePreviewBox');
+        const addProductImagePreviewImg = document.getElementById('addProductImagePreviewImg');
+        const btnClearAddProductImage = document.getElementById('btnClearAddProductImage');
+
+        if (productImagenInput) {
+            productImagenInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(evt) {
+                        addProductImagePreviewImg.src = evt.target.result;
+                        addProductImagePreviewBox.style.display = 'block';
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    addProductImagePreviewBox.style.display = 'none';
+                    addProductImagePreviewImg.src = '';
+                }
+            });
+        }
+
+        if (btnClearAddProductImage) {
+            btnClearAddProductImage.addEventListener('click', function() {
+                productImagenInput.value = '';
+                addProductImagePreviewBox.style.display = 'none';
+                addProductImagePreviewImg.src = '';
+            });
+        }
+
+        // Vista previa de imagen ampliada
+        function showDashboardImagePreview(imgUrl, encodedNombre) {
+            const nombre = decodeURIComponent(encodedNombre || 'Producto');
+            const modalImg = document.getElementById('imagePreviewImg');
+            const modalTitle = document.getElementById('imagePreviewTitle');
+            if (modalImg) modalImg.src = imgUrl;
+            if (modalTitle) modalTitle.innerText = nombre;
+            const modalEl = document.getElementById('imagePreviewModal');
+            if (modalEl) {
+                const modal = new bootstrap.Modal(modalEl);
+                modal.show();
+            }
+        }
+
+        // Abrir modal para subir/actualizar foto de producto existente
+        function openDashboardPhotoModal(productId, encodedNombre, currentImgUrl) {
+            const nombre = decodeURIComponent(encodedNombre || 'Producto');
+            document.getElementById('dashPhotoProductId').value = productId;
+            document.getElementById('dashPhotoProductName').innerText = `#${productId} - ${nombre}`;
+            
+            const previewImg = document.getElementById('dashPhotoPreviewImg');
+            const noImgBox = document.getElementById('dashPhotoNoImg');
+            const photoInput = document.getElementById('dashPhotoInput');
+            const alertBox = document.getElementById('dashPhotoAlert');
+
+            photoInput.value = '';
+            alertBox.className = 'alert d-none py-2';
+            alertBox.innerText = '';
+
+            if (currentImgUrl && currentImgUrl !== 'null' && currentImgUrl !== '') {
+                previewImg.src = currentImgUrl;
+                previewImg.style.display = 'block';
+                noImgBox.style.display = 'none';
+            } else {
+                previewImg.src = '';
+                previewImg.style.display = 'none';
+                noImgBox.style.display = 'block';
+            }
+
+            const modal = new bootstrap.Modal(document.getElementById('dashboardPhotoModal'));
+            modal.show();
+        }
+
+        // Previsualizar nueva imagen seleccionada en el modal de actualizar foto
+        const dashPhotoInput = document.getElementById('dashPhotoInput');
+        if (dashPhotoInput) {
+            dashPhotoInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                const previewImg = document.getElementById('dashPhotoPreviewImg');
+                const noImgBox = document.getElementById('dashPhotoNoImg');
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(evt) {
+                        previewImg.src = evt.target.result;
+                        previewImg.style.display = 'block';
+                        noImgBox.style.display = 'none';
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        // Guardar foto del producto existente
+        const btnSaveDashboardPhoto = document.getElementById('btnSaveDashboardPhoto');
+        if (btnSaveDashboardPhoto) {
+            btnSaveDashboardPhoto.addEventListener('click', async function() {
+                const productId = document.getElementById('dashPhotoProductId').value;
+                const fileInput = document.getElementById('dashPhotoInput');
+                const alertBox = document.getElementById('dashPhotoAlert');
+
+                if (!fileInput.files || fileInput.files.length === 0) {
+                    alertBox.className = 'alert alert-warning py-2';
+                    alertBox.innerText = 'Por favor selecciona un archivo de imagen primero.';
+                    return;
+                }
+
+                const file = fileInput.files[0];
+                const formData = new FormData();
+                formData.append('imagen', file);
+
+                btnSaveDashboardPhoto.disabled = true;
+                btnSaveDashboardPhoto.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Guardando...';
+
+                try {
+                    console.log(`Subiendo foto para producto ${productId}...`);
+                    await fetchAPI(`productos/${productId}/subir_imagen/`, 'POST', formData);
+                    
+                    alertBox.className = 'alert alert-success py-2';
+                    alertBox.innerText = '¡Fotografía actualizada exitosamente!';
+
+                    setTimeout(() => {
+                        const modalInstance = bootstrap.Modal.getInstance(document.getElementById('dashboardPhotoModal'));
+                        if (modalInstance) modalInstance.hide();
+                        loadProducts(); // Refrescar lista de productos
+                    }, 800);
+                } catch (error) {
+                    console.error('Error al subir fotografía:', error);
+                    alertBox.className = 'alert alert-danger py-2';
+                    alertBox.innerText = 'Error al subir foto: ' + error.message;
+                } finally {
+                    btnSaveDashboardPhoto.disabled = false;
+                    btnSaveDashboardPhoto.innerHTML = '<i class="bi bi-cloud-arrow-up me-1"></i>Guardar Foto';
+                }
+            });
+        }
+
+        // Event Listener for Add Product Form (con soporte para subida de fotos multipart/form-data)
         document.getElementById('addProductForm').addEventListener('submit', async function(event) {
             event.preventDefault();
 
@@ -2175,23 +2413,31 @@
             const categoria = document.getElementById('productCategoria').value;
             const proveedor = document.getElementById('productProveedor').value;
 
-            const payload = {
-                nombre: nombre,
-                descripcion: descripcion,
-                codigo_barras: codigoBarras,
-                precio_compra: parseFloat(precioCompra),
-                porcentaje_ganancia: parseFloat(porcentajeGanancia),
-                stock_actual: parseInt(stockActual),
-                stock_minimo: parseInt(stockMinimo),
-                categoria: parseInt(categoria),
-                proveedor: parseInt(proveedor)
-            };
+            const formData = new FormData();
+            formData.append('nombre', nombre);
+            formData.append('descripcion', descripcion);
+            formData.append('codigo_barras', codigoBarras);
+            formData.append('precio_compra', precioCompra);
+            formData.append('porcentaje_ganancia', porcentajeGanancia);
+            formData.append('stock_actual', stockActual);
+            formData.append('stock_minimo', stockMinimo);
+            formData.append('categoria', categoria);
+            formData.append('proveedor', proveedor);
+
+            const fileInput = document.getElementById('productImagen');
+            if (fileInput && fileInput.files && fileInput.files[0]) {
+                formData.append('imagen', fileInput.files[0]);
+            }
 
             try {
-                console.log("Enviando producto:", payload);
-                await fetchAPI('productos/', 'POST', payload);
-                alert('¡Producto guardado exitosamente!');
+                console.log("Enviando nuevo producto (FormData con posible foto)...");
+                await fetchAPI('productos/', 'POST', formData);
+                alert('¡Producto guardado exitosamente con su fotografía!');
                 document.getElementById('addProductForm').reset();
+                if (addProductImagePreviewBox) {
+                    addProductImagePreviewBox.style.display = 'none';
+                    addProductImagePreviewImg.src = '';
+                }
                 const addProductModal = bootstrap.Modal.getInstance(document.getElementById('addProductModal'));
                 if (addProductModal) {
                     addProductModal.hide();

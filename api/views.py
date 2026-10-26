@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
+from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
 from django.db.models import Sum, F
 from django.utils import timezone
 from decimal import Decimal, ROUND_HALF_UP
@@ -105,7 +106,7 @@ class ProveedorViewSet(viewsets.ModelViewSet):
     #
     # - DELETE /api/proveedores/{id}/
     #   Descripción: Elimina un proveedor específico.
-    queryset = Proveedor.objects.all()
+    queryset = Proveedor.objects.all().order_by('-id')
     serializer_class = ProveedorSerializer
 
     def get_permissions(self):
@@ -116,8 +117,9 @@ class ProveedorViewSet(viewsets.ModelViewSet):
         return [permission() for permission in self.permission_classes]
 
 class ProductoViewSet(viewsets.ModelViewSet):
-    queryset = Producto.objects.all()
+    queryset = Producto.objects.all().order_by('-id')
     serializer_class = ProductoSerializer
+    parser_classes = [MultiPartParser, FormParser, JSONParser]
 
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
@@ -149,6 +151,21 @@ class ProductoViewSet(viewsets.ModelViewSet):
         instance.precio_venta = instance.precio_venta.quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
 
         instance.save()
+
+    @action(detail=True, methods=['post', 'patch'], parser_classes=[MultiPartParser, FormParser])
+    def subir_imagen(self, request, pk=None):
+        """
+        Endpoint dedicado para subir o actualizar la imagen de un producto existente.
+        Acepta multipart/form-data con el campo 'imagen'.
+        """
+        producto = self.get_object()
+        if 'imagen' not in request.FILES:
+            return Response({'error': 'No se proporcionó ningún archivo de imagen.'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        producto.imagen = request.FILES['imagen']
+        producto.save()
+        serializer = self.get_serializer(producto)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     @action(detail=False, methods=['get'])
     def stock_bajo(self, request):
