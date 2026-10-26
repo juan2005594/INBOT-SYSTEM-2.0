@@ -494,36 +494,67 @@
             letter-spacing: 0.04em;
         }
 
-        /* Tablas */
+        /* Tablas Ultra-Nítidas de Alto Contraste */
         .table {
-            color: #e2e8f0 !important;
-            border-color: rgba(255, 255, 255, 0.08) !important;
+            --bs-table-color: #ffffff !important;
+            --bs-table-bg: transparent !important;
+            --bs-table-border-color: rgba(255, 255, 255, 0.1) !important;
+            --bs-table-accent-bg: transparent !important;
+            --bs-table-striped-color: #ffffff !important;
+            --bs-table-striped-bg: rgba(255, 255, 255, 0.04) !important;
+            --bs-table-hover-color: #ffffff !important;
+            --bs-table-hover-bg: rgba(99, 102, 241, 0.2) !important;
+            color: #ffffff !important;
+            border-color: rgba(255, 255, 255, 0.1) !important;
+            vertical-align: middle;
+        }
+
+        .table > :not(caption) > * > * {
+            color: #ffffff !important;
+            background-color: transparent !important;
+            box-shadow: none !important;
         }
 
         .table thead th {
             background-color: #1e293b !important;
-            color: #94a3b8 !important;
-            border-bottom: 1px solid #334155 !important;
-            font-size: 0.76rem !important;
-            font-weight: 700 !important;
+            color: #cbd5e1 !important;
+            border-bottom: 2px solid #475569 !important;
+            font-size: 0.78rem !important;
+            font-weight: 800 !important;
             text-transform: uppercase !important;
-            letter-spacing: 0.05em !important;
-            padding: 12px 14px !important;
+            letter-spacing: 0.06em !important;
+            padding: 14px 16px !important;
+            white-space: nowrap;
         }
 
         .table tbody td {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
-            padding: 12px 14px !important;
+            color: #ffffff !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+            padding: 13px 16px !important;
             vertical-align: middle !important;
             background-color: transparent !important;
+            font-size: 0.92rem !important;
+            font-weight: 500 !important;
         }
 
-        .table-striped tbody tr:nth-of-type(odd) td {
-            background-color: rgba(255, 255, 255, 0.02) !important;
+        .table-striped > tbody > tr:nth-of-type(odd) > * {
+            background-color: rgba(255, 255, 255, 0.045) !important;
+            color: #ffffff !important;
         }
 
-        .table-striped tbody tr:hover td {
-            background-color: rgba(99, 102, 241, 0.08) !important;
+        .table-striped > tbody > tr:nth-of-type(even) > * {
+            background-color: transparent !important;
+            color: #ffffff !important;
+        }
+
+        .table-striped > tbody > tr:hover > *,
+        .table > tbody > tr:hover > * {
+            background-color: rgba(99, 102, 241, 0.22) !important;
+            color: #ffffff !important;
+        }
+
+        .table td, .table th {
+            color: #ffffff !important;
         }
 
         /* Botones Globales */
@@ -999,15 +1030,21 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="row mb-3">
+                        <div class="row g-3 mb-4">
                             <div class="col-md-6">
-                                <h5>Total Productos en Inventario: <span id="report-total-products">0</span></h5>
+                                <div class="p-3 rounded-3" style="background: rgba(99, 102, 241, 0.12); border: 1px solid rgba(99, 102, 241, 0.3);">
+                                    <div style="font-size: 0.78rem; text-transform: uppercase; color: #a5b4fc; font-weight: 700; letter-spacing: 0.05em;">Total Productos en Inventario</div>
+                                    <div style="font-size: 1.85rem; font-weight: 800; color: #ffffff;" id="report-total-products">0</div>
+                                </div>
                             </div>
                             <div class="col-md-6">
-                                <h5>Valor Total de Inventario: $<span id="report-total-value">0.00</span></h5>
+                                <div class="p-3 rounded-3" style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.3);">
+                                    <div style="font-size: 0.78rem; text-transform: uppercase; color: #6ee7b7; font-weight: 700; letter-spacing: 0.05em;">Valor Total de Inventario</div>
+                                    <div style="font-size: 1.85rem; font-weight: 800; color: #34d399;" id="report-total-value">$0.00</div>
+                                </div>
                             </div>
                         </div>
-                        <h6>Detalle de Productos:</h6>
+                        <h6 style="color: #cbd5e1; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; margin-bottom: 12px;">Detalle de Productos:</h6>
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -1700,58 +1737,87 @@
             try {
                 console.log("Attempting to fetch inventory report...");
                 const report = await fetchAPI('ventas/reporte_inventario/');
-                console.log("Reporte de Inventario completo (data received):");
-                console.log(report); // Debugging the full report
+                console.log("Reporte de Inventario completo (data received):", report);
 
                 // Populate Total Products and Total Value
                 const reportTotalProducts = document.getElementById('report-total-products');
                 const reportTotalValue = document.getElementById('report-total-value');
-                if (reportTotalProducts) reportTotalProducts.innerText = report.total_productos;
-                if (reportTotalValue) reportTotalValue.innerText = parseFloat(report.valor_total_inventario).toFixed(2);
-                console.log("Total products and total value populated.");
+                if (reportTotalProducts) {
+                    reportTotalProducts.innerText = (report.total_productos || 0) + ' productos';
+                }
+                if (reportTotalValue) {
+                    const totalVal = parseFloat(report.valor_total_inventario) || 0;
+                    reportTotalValue.innerText = '$' + totalVal.toLocaleString('es-CO', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+                }
 
                 // Populate All Products Table
                 const allProductsBody = document.getElementById('report-all-products-body');
-                console.log("allProductsBody element:", allProductsBody);
                 if (allProductsBody) {
                     allProductsBody.innerHTML = '';
-                    console.log("Cleared allProductsBody. Populating with items...");
                     if (report.productos_list && report.productos_list.length > 0) {
                         report.productos_list.forEach(item => {
-                            console.log("Processing all product item:", item);
                             const row = allProductsBody.insertRow();
-                            row.insertCell().innerText = item.nombre;
-                            row.insertCell().innerText = item.categoria;
-                            row.insertCell().innerText = item.proveedor;
-                            row.insertCell().innerText = item.stock_actual;
-                            row.insertCell().innerText = item.stock_minimo;
-                            row.insertCell().innerText = parseFloat(item.precio_venta).toFixed(2);
-                            row.insertCell().innerText = (item.stock_actual * item.precio_venta).toFixed(2); // Valor Total Item
+                            
+                            const tdNombre = row.insertCell();
+                            tdNombre.innerText = item.nombre;
+                            tdNombre.style.fontWeight = '700';
+                            tdNombre.style.color = '#ffffff';
+
+                            const tdCategoria = row.insertCell();
+                            tdCategoria.innerText = item.categoria || '-';
+                            tdCategoria.style.color = '#cbd5e1';
+
+                            const tdProveedor = row.insertCell();
+                            tdProveedor.innerText = item.proveedor || '-';
+                            tdProveedor.style.color = '#cbd5e1';
+
+                            const tdStockActual = row.insertCell();
+                            const isLow = Number(item.stock_actual) <= Number(item.stock_minimo);
+                            tdStockActual.innerHTML = `<span class="badge ${isLow ? 'bg-danger' : 'bg-success'}" style="font-size:0.85rem; padding: 5px 10px; font-weight: 700;">${item.stock_actual}</span>`;
+
+                            const tdStockMin = row.insertCell();
+                            tdStockMin.innerText = item.stock_minimo;
+                            tdStockMin.style.color = '#94a3b8';
+
+                            const tdPrecio = row.insertCell();
+                            tdPrecio.innerText = '$' + parseFloat(item.precio_venta).toLocaleString('es-CO', {minimumFractionDigits: 2});
+                            tdPrecio.style.color = '#38bdf8';
+                            tdPrecio.style.fontWeight = '700';
+
+                            const tdTotal = row.insertCell();
+                            const totalItem = (Number(item.stock_actual) * Number(item.precio_venta));
+                            tdTotal.innerText = '$' + totalItem.toLocaleString('es-CO', {minimumFractionDigits: 2});
+                            tdTotal.style.color = '#34d399';
+                            tdTotal.style.fontWeight = '800';
                         });
                     } else {
-                        allProductsBody.innerHTML = '<tr><td colspan="7">No hay productos en el inventario.</td></tr>';
+                        allProductsBody.innerHTML = '<tr><td colspan="7" class="text-center py-4" style="color: #94a3b8;">No hay productos en el inventario.</td></tr>';
                     }
-                    console.log("Finished populating all products.");
                 }
 
                 // Populate Low Stock Table
                 const lowStockBody = document.getElementById('report-low-stock-body');
-                console.log("lowStockBody element:", lowStockBody);
                 if (lowStockBody) {
                     lowStockBody.innerHTML = '';
-                    console.log("Cleared lowStockBody. Populating with low stock items...");
                     if (report.productos_bajo_stock && report.productos_bajo_stock.length > 0) {
                         report.productos_bajo_stock.forEach(item => {
-                            console.log("Processing low stock item:", item);
                             const row = lowStockBody.insertRow();
-                            row.insertCell().innerText = item.nombre;
-                            row.insertCell().innerText = item.stock_actual;
-                            row.insertCell().innerText = item.stock_minimo;
+                            
+                            const tdNombre = row.insertCell();
+                            tdNombre.innerText = item.nombre;
+                            tdNombre.style.fontWeight = '700';
+                            tdNombre.style.color = '#ffffff';
+
+                            const tdStockActual = row.insertCell();
+                            tdStockActual.innerHTML = `<span class="badge bg-danger" style="font-size:0.85rem; padding: 5px 10px; font-weight: 700;">${item.stock_actual}</span>`;
+
+                            const tdStockMin = row.insertCell();
+                            tdStockMin.innerText = item.stock_minimo;
+                            tdStockMin.style.color = '#94a3b8';
                         });
                     } else {
-                        lowStockBody.innerHTML = '<tr><td colspan="3">No hay productos con stock bajo.</td></tr>';
+                        lowStockBody.innerHTML = '<tr><td colspan="3" class="text-center py-3" style="color: #94a3b8;">No hay productos con stock bajo.</td></tr>';
                     }
-                    console.log("Finished populating low stock products.");
                 }
 
             } catch (error) {
