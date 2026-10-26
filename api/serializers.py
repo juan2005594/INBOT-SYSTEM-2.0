@@ -46,7 +46,7 @@ class DetalleFacturaCompraSerializer(serializers.ModelSerializer):
     class Meta:
         model = DetalleFacturaCompra
         # Listar explícitamente los campos que se esperan recibir del frontend para la creación
-        fields = ['id', 'producto', 'cantidad', 'precio_unitario']
+        fields = ['id', 'producto', 'producto_nombre', 'codigo_barras', 'cantidad', 'precio_unitario', 'subtotal']
         # Definir los campos que son de solo lectura (se envían en la respuesta, pero no se esperan en la entrada)
         read_only_fields = ('id', 'producto_nombre', 'codigo_barras', 'subtotal')
 
@@ -67,6 +67,8 @@ class FacturaCompraSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         detalles_data = validated_data.pop('detalles')
+        if 'total' not in validated_data:
+            validated_data['total'] = Decimal('0.00')
         factura_compra = FacturaCompra.objects.create(**validated_data)
         total_calculado = 0
         for detalle_data in detalles_data:

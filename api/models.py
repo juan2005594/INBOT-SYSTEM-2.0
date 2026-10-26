@@ -78,10 +78,12 @@ class DetalleFacturaCompra(models.Model):
         return f"{self.producto.nombre} - {self.cantidad} unidades"
 
     def save(self, *args, **kwargs):
+        is_new = self.pk is None
         self.subtotal = self.cantidad * self.precio_unitario
         super().save(*args, **kwargs)
-        # Actualizar stock del producto de forma atómica
-        Producto.objects.filter(id=self.producto.id).update(stock_actual=F('stock_actual') + self.cantidad)
+        if is_new:
+            # Actualizar stock del producto de forma atómica
+            Producto.objects.filter(id=self.producto.id).update(stock_actual=F('stock_actual') + self.cantidad)
 
 class Venta(models.Model):
     fecha_venta = models.DateTimeField(auto_now_add=True)
@@ -103,12 +105,13 @@ class DetalleVenta(models.Model):
         return f"{self.producto.nombre} - {self.cantidad} unidades"
 
     def save(self, *args, **kwargs):
+        is_new = self.pk is None
         # Asegurar que subtotal se calcula con Decimal y se cuantifica a 2 decimales
         self.subtotal = (Decimal(str(self.cantidad)) * Decimal(str(self.precio_unitario))).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
         super().save(*args, **kwargs)
-        # Actualizar stock del producto de forma atómica
-        # Log the current stock and quantity before the update for debugging
-        print(f"DEBUG: Actualizando stock para Producto ID: {self.producto.id}")
-        print(f"DEBUG: Stock actual antes de la venta: {self.producto.stock_actual}")
-        print(f"DEBUG: Cantidad vendida: {self.cantidad}")
-        Producto.objects.filter(id=self.producto.id).update(stock_actual=F('stock_actual') - self.cantidad)
+        if is_new:
+            # Actualizar stock del producto de forma atómica
+            print(f"DEBUG: Actualizando stock para Producto ID: {self.producto.id}")
+            print(f"DEBUG: Stock actual antes de la venta: {self.producto.stock_actual}")
+            print(f"DEBUG: Cantidad vendida: {self.cantidad}")
+            Producto.objects.filter(id=self.producto.id).update(stock_actual=F('stock_actual') - self.cantidad)
