@@ -439,6 +439,52 @@
             color: #ffffff !important;
         }
 
+        .form-control::placeholder,
+        textarea.form-control::placeholder {
+            color: #94a3b8 !important;
+            opacity: 1 !important;
+        }
+
+        .form-control[readonly],
+        .form-control:disabled {
+            background-color: #0f172a !important;
+            color: #cbd5e1 !important;
+            border-color: #334155 !important;
+            cursor: not-allowed;
+        }
+
+        select.form-select option,
+        select option {
+            background-color: #1e293b !important;
+            color: #f8fafc !important;
+            padding: 8px 12px;
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            cursor: pointer;
+            opacity: 0.85;
+        }
+        input[type="date"]::-webkit-calendar-picker-indicator:hover {
+            opacity: 1;
+        }
+
+        .form-check-label {
+            color: #e2e8f0 !important;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .modal-body .table td ul {
+            margin: 0;
+            padding-left: 18px;
+            color: #e2e8f0;
+        }
+
+        .modal-body .table td ul li {
+            margin-bottom: 2px;
+        }
+
         .form-label {
             font-size: 0.8rem;
             font-weight: 700;
@@ -1201,7 +1247,7 @@
             
             const displayGroups = Array.isArray(groups) ? groups.join(', ') : 'Desconocido';
             const userInfoDiv = document.getElementById('user-info');
-            userInfoDiv.innerHTML = `<i class="fas fa-user-circle"></i> Bienvenido, ${displayGroups}!`;
+            userInfoDiv.innerHTML = `<i class="bi bi-person-circle"></i> Bienvenido, ${displayGroups}!`;
 
             const isAdmin = Array.isArray(groups) && (groups.includes('Administradores') || groups.includes('Administrador') || groups.includes('admin'));
             const isSeller = Array.isArray(groups) && groups.includes('Vendedor');
