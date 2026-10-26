@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,27 +10,65 @@
     <!-- Google Fonts & Bootstrap Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
+        /* =========================================================
+           SISTEMA DE DISEÑO DE ALTA NITIDEZ & CONTRASTE
+           ========================================================= */
         :root {
-            --bg-base: #0a0e1a;
-            --bg-surface: #111827;
-            --bg-card: #1e293b;
-            --bg-card-hover: #243248;
-            --border-subtle: rgba(255, 255, 255, 0.08);
-            --border-highlight: rgba(99, 102, 241, 0.4);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --text-dim: #64748b;
-            --accent-indigo: #6366f1;
-            --accent-purple: #8b5cf6;
-            --accent-emerald: #10b981;
-            --accent-cyan: #06b6d4;
-            --accent-rose: #f43f5e;
+            /* MODO CLARO (Máxima nitidez, contraste 100% nítido) */
+            --bg-base: #f1f5f9;
+            --bg-nav: #ffffff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #ffffff;
+            --bg-input: #ffffff;
+            --border-card: #cbd5e1;
+            --border-highlight: #4f46e5;
+            
+            --text-title: #0f172a;
+            --text-body: #334155;
+            --text-muted: #475569;
+            
+            --accent-primary: #4f46e5;
+            --accent-purple: #7c3aed;
+            --accent-emerald: #059669;
+            --accent-cyan: #0284c7;
+            --accent-rose: #dc2626;
+            --accent-amber: #d97706;
+
+            --img-bg: #f8fafc;
+            --card-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+            --card-shadow-hover: 0 12px 28px rgba(15, 23, 42, 0.16);
             --radius-md: 14px;
             --radius-lg: 18px;
+        }
+
+        [data-theme="dark"] {
+            /* MODO OSCURO (Alto contraste sin desenfoque ni texto apagado) */
+            --bg-base: #0a0e1a;
+            --bg-nav: #111827;
+            --bg-card: #1e293b;
+            --bg-card-hover: #243248;
+            --bg-input: #0f172a;
+            --border-card: #334155;
+            --border-highlight: #6366f1;
+            
+            --text-title: #ffffff;
+            --text-body: #e2e8f0;
+            --text-muted: #cbd5e1;
+            
+            --accent-primary: #6366f1;
+            --accent-purple: #8b5cf6;
+            --accent-emerald: #10b981;
+            --accent-cyan: #38bdf8;
+            --accent-rose: #f43f5e;
+            --accent-amber: #fbbf24;
+
+            --img-bg: #0b1120;
+            --card-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            --card-shadow-hover: 0 14px 34px rgba(0, 0, 0, 0.6);
         }
 
         * {
@@ -39,22 +77,24 @@
 
         body {
             background-color: var(--bg-base);
-            color: var(--text-main);
+            color: var(--text-body);
             font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
             min-height: 100vh;
             margin: 0;
             padding: 0;
+            transition: background-color 0.25s ease, color 0.25s ease;
         }
 
         /* Top Navigation Bar */
         .top-navbar {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border-subtle);
+            background: var(--bg-nav);
+            border-bottom: 1.5px solid var(--border-card);
             padding: 16px 24px;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.25s ease;
         }
 
         .brand-box {
@@ -62,86 +102,190 @@
             align-items: center;
             gap: 12px;
             text-decoration: none;
-            color: #ffffff;
+            color: var(--text-title);
         }
 
         .brand-icon {
-            width: 42px;
-            height: 42px;
+            width: 44px;
+            height: 44px;
             border-radius: 12px;
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.35rem;
-            box-shadow: 0 4px 18px rgba(99, 102, 241, 0.4);
+            font-size: 1.4rem;
+            color: #ffffff;
+            box-shadow: 0 4px 16px rgba(79, 70, 229, 0.35);
         }
 
         .brand-title {
             font-weight: 800;
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             letter-spacing: -0.02em;
             line-height: 1.1;
+            color: var(--text-title);
         }
 
         .brand-sub {
-            font-size: 0.72rem;
-            color: var(--accent-cyan);
+            font-size: 0.75rem;
+            color: var(--accent-primary);
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            font-weight: 700;
+            font-weight: 800;
         }
 
-        /* Summary Stats Pills */
-        .stat-pill {
-            background: rgba(30, 41, 59, 0.6);
-            border: 1px solid var(--border-subtle);
-            border-radius: 12px;
-            padding: 10px 16px;
+        /* Botón selector de tema Claro/Oscuro */
+        .btn-theme-toggle {
+            background: var(--bg-input);
+            border: 1.5px solid var(--border-card);
+            color: var(--text-title);
+            font-weight: 700;
+            font-size: 0.85rem;
+            border-radius: 10px;
+            padding: 8px 14px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-theme-toggle:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        /* Tarjetas de Métricas - 100% Nítidas */
+        .stat-pill {
+            background: var(--bg-card);
+            border: 1.5px solid var(--border-card);
+            border-radius: var(--radius-md);
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: var(--card-shadow);
+            transition: all 0.2s ease;
+        }
+
+        .stat-pill:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
         }
 
         .stat-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            font-size: 1.35rem;
+            flex-shrink: 0;
         }
 
-        /* Card Form Section */
+        .stat-label {
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+        }
+
+        .stat-value {
+            font-size: 1.85rem;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--text-title);
+        }
+
+        /* Buscador y Filtros */
+        .search-container {
+            background: var(--bg-card);
+            border: 1.5px solid var(--border-card);
+            border-radius: 12px;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            box-shadow: var(--card-shadow);
+            transition: border-color 0.2s ease;
+        }
+
+        .search-container:focus-within {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+        }
+
+        .search-icon {
+            padding: 0 14px;
+            font-size: 1.15rem;
+            color: var(--accent-primary);
+        }
+
+        .search-input {
+            border: none !important;
+            background: transparent !important;
+            color: var(--text-title) !important;
+            font-weight: 600;
+            font-size: 0.95rem;
+            outline: none !important;
+            width: 100%;
+            padding: 8px 10px 8px 0;
+        }
+
+        .search-input::placeholder {
+            color: var(--text-muted) !important;
+            opacity: 1 !important;
+            font-weight: 500;
+        }
+
+        .filter-select {
+            background-color: var(--bg-card) !important;
+            border: 1.5px solid var(--border-card) !important;
+            color: var(--text-title) !important;
+            font-weight: 700;
+            font-size: 0.92rem;
+            border-radius: 12px !important;
+            padding: 10px 16px !important;
+            box-shadow: var(--card-shadow);
+        }
+
+        .filter-select:focus {
+            border-color: var(--accent-primary) !important;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2) !important;
+        }
+
+        /* Formulario Nuevo Producto */
         .form-section-card {
             background: var(--bg-card);
-            border: 1px solid var(--border-highlight);
+            border: 2px solid var(--accent-primary);
             border-radius: var(--radius-lg);
             padding: 28px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            box-shadow: var(--card-shadow-hover);
             margin-bottom: 30px;
         }
 
         .form-section-card label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #cbd5e1;
+            font-size: 0.86rem;
+            font-weight: 700;
+            color: var(--text-title);
             margin-bottom: 6px;
         }
 
         .form-control, .form-select {
-            background-color: #0f172a !important;
-            border: 1px solid rgba(255, 255, 255, 0.12) !important;
-            color: #ffffff !important;
+            background-color: var(--bg-input) !important;
+            border: 1.5px solid var(--border-card) !important;
+            color: var(--text-title) !important;
             border-radius: 10px !important;
             padding: 10px 14px !important;
             font-size: 0.92rem !important;
+            font-weight: 600;
         }
 
         .form-control:focus, .form-select:focus {
-            border-color: var(--accent-indigo) !important;
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25) !important;
+            border-color: var(--accent-primary) !important;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2) !important;
         }
 
         /* Grid de Productos */
@@ -153,7 +297,7 @@
 
         .product-card {
             background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
+            border: 1.5px solid var(--border-card);
             border-radius: var(--radius-lg);
             overflow: hidden;
             display: flex;
@@ -161,64 +305,78 @@
             justify-content: space-between;
             transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            box-shadow: var(--card-shadow);
         }
 
         .product-card:hover {
             transform: translateY(-6px);
             border-color: var(--border-highlight);
-            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45), 0 0 20px rgba(99, 102, 241, 0.15);
+            box-shadow: var(--card-shadow-hover);
         }
 
-        /* Contenedor de la foto del producto */
+        /* Contenedor de Fotografía */
         .product-img-wrapper {
             position: relative;
             width: 100%;
-            height: 210px;
-            background: #0f172a;
+            height: 220px;
+            background: var(--img-bg);
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            border-bottom: 1px solid var(--border-subtle);
+            border-bottom: 1.5px solid var(--border-card);
         }
 
         .product-img-wrapper img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            padding: 8px;
             transition: transform 0.35s ease;
             cursor: pointer;
         }
 
         .product-card:hover .product-img-wrapper img {
-            transform: scale(1.05);
+            transform: scale(1.06);
         }
 
-        .product-no-img {
+        /* Caja nítida cuando NO tiene fotografía */
+        .product-no-img-box {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: var(--text-dim);
+            text-align: center;
+            border: 2px dashed rgba(79, 70, 229, 0.4);
+            border-radius: 16px;
+            padding: 16px 24px;
+            background: rgba(79, 70, 229, 0.05);
             gap: 6px;
+            width: 85%;
         }
 
-        .product-no-img i {
-            font-size: 2.8rem;
-            color: rgba(148, 163, 184, 0.3);
+        .product-no-img-box i {
+            font-size: 2.2rem;
+            color: var(--accent-primary);
+        }
+
+        .product-no-img-box span {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--text-title);
         }
 
         .zoom-overlay {
             position: absolute;
             top: 10px;
             right: 10px;
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(6px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 8px;
             padding: 4px 8px;
             font-size: 0.75rem;
+            font-weight: 700;
             color: #ffffff;
             opacity: 0;
             transition: opacity 0.2s;
@@ -233,13 +391,25 @@
             position: absolute;
             top: 12px;
             left: 12px;
-            font-size: 0.72rem;
-            font-weight: 700;
+            font-size: 0.78rem;
+            font-weight: 800;
             padding: 4px 10px;
-            border-radius: 20px;
-            backdrop-filter: blur(6px);
+            border-radius: 8px;
             letter-spacing: 0.04em;
             text-transform: uppercase;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .stock-good {
+            background: var(--accent-emerald);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .stock-bad {
+            background: var(--accent-rose);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .product-body {
@@ -251,19 +421,20 @@
 
         .product-title {
             font-size: 1.15rem;
-            font-weight: 700;
-            color: #ffffff;
+            font-weight: 800;
+            color: var(--text-title);
             margin-bottom: 6px;
-            line-height: 1.3;
+            line-height: 1.25;
         }
 
         .product-code {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.78rem;
-            color: var(--accent-cyan);
-            background: rgba(6, 182, 212, 0.1);
-            border: 1px solid rgba(6, 182, 212, 0.25);
-            padding: 2px 8px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            background: rgba(79, 70, 229, 0.1);
+            border: 1px solid rgba(79, 70, 229, 0.25);
+            padding: 3px 8px;
             border-radius: 6px;
             display: inline-flex;
             align-items: center;
@@ -273,7 +444,7 @@
         }
 
         .product-desc {
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             color: var(--text-muted);
             line-height: 1.45;
             margin-bottom: 14px;
@@ -288,10 +459,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.8rem;
-            color: var(--text-dim);
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
             padding: 8px 0;
-            border-top: 1px dashed var(--border-subtle);
+            border-top: 1px dashed var(--border-card);
         }
 
         .product-price-box {
@@ -303,51 +475,52 @@
         }
 
         .product-price-val {
-            font-size: 1.35rem;
+            font-size: 1.45rem;
             font-weight: 800;
             color: var(--accent-emerald);
             letter-spacing: -0.02em;
         }
 
-        /* Botón de Gestionar / Subir Foto */
+        /* Botón de Gestión de Fotografía */
         .btn-photo-action {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.2) 100%);
-            border: 1px solid var(--accent-indigo);
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 0.85rem;
-            padding: 8px 14px;
+            background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+            border: none;
+            color: #ffffff !important;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 10px 16px;
             border-radius: 10px;
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
+            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
             transition: all 0.2s ease;
+            cursor: pointer;
         }
 
         .btn-photo-action:hover {
-            background: linear-gradient(135deg, var(--accent-indigo) 0%, var(--accent-purple) 100%);
-            color: #ffffff;
-            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+            background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%);
             transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(79, 70, 229, 0.45);
         }
 
-        /* Modal styling */
+        /* Modales */
         .modal-content {
-            background: #111827;
-            color: #ffffff;
-            border: 1px solid var(--border-highlight);
+            background: var(--bg-card);
+            color: var(--text-title);
+            border: 2px solid var(--border-card);
             border-radius: var(--radius-lg);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
         }
 
         .modal-header {
-            border-bottom: 1px solid var(--border-subtle);
+            border-bottom: 1.5px solid var(--border-card);
         }
 
         .modal-footer {
-            border-top: 1px solid var(--border-subtle);
+            border-top: 1.5px solid var(--border-card);
         }
     </style>
 </head>
@@ -362,16 +535,20 @@
                 </div>
                 <div>
                     <div class="brand-title">INBOT SYSTEM</div>
-                    <div class="brand-sub">Catálogo de Productos & Inventario</div>
+                    <div class="brand-sub">Catálogo & Inventario de Productos</div>
                 </div>
             </a>
 
             <div class="d-flex align-items-center gap-2">
-                <a href="/dashboard/" class="btn btn-outline-light d-flex align-items-center gap-2" style="border-radius: 10px;">
+                <button type="button" class="btn-theme-toggle" id="btnThemeToggle" title="Cambiar tema">
+                    <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+                    <span id="themeText">Modo Oscuro</span>
+                </button>
+                <a href="/dashboard/" class="btn btn-outline-secondary d-flex align-items-center gap-2" style="border-radius: 10px; font-weight: 700;">
                     <i class="bi bi-arrow-left"></i>
                     <span>Volver al Dashboard</span>
                 </a>
-                <button type="button" class="btn btn-primary d-flex align-items-center gap-2" id="btnToggleAddForm" style="border-radius: 10px;">
+                <button type="button" class="btn btn-primary d-flex align-items-center gap-2" id="btnToggleAddForm" style="border-radius: 10px; font-weight: 700;">
                     <i class="bi bi-plus-circle-fill"></i>
                     <span>Nuevo Producto</span>
                 </button>
@@ -381,64 +558,64 @@
 
     <div class="container-fluid px-4 py-4" style="max-width: 1400px;">
 
-        <!-- Métricas Rápidas & Barra de Filtros -->
+        <!-- Métricas Rápidas 100% Nítidas -->
         <div class="row g-3 mb-4 align-items-center">
             <div class="col-lg-3 col-md-6">
                 <div class="stat-pill">
-                    <div class="stat-icon" style="background: rgba(99, 102, 241, 0.15); color: #818cf8;">
+                    <div class="stat-icon" style="background: rgba(79, 70, 229, 0.15); color: #4f46e5;">
                         <i class="bi bi-box-seam"></i>
                     </div>
                     <div>
-                        <div class="small text-muted text-uppercase fw-bold" style="font-size: 0.72rem;">Total Productos</div>
-                        <div class="fs-4 fw-bold text-white" id="statTotalProducts">0</div>
+                        <div class="stat-label">Total Productos</div>
+                        <div class="stat-value" id="statTotalProducts">0</div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="stat-pill">
-                    <div class="stat-icon" style="background: rgba(16, 185, 129, 0.15); color: #34d399;">
+                    <div class="stat-icon" style="background: rgba(5, 150, 105, 0.15); color: #059669;">
                         <i class="bi bi-camera-fill"></i>
                     </div>
                     <div>
-                        <div class="small text-muted text-uppercase fw-bold" style="font-size: 0.72rem;">Con Fotografía</div>
-                        <div class="fs-4 fw-bold text-white" id="statWithPhoto">0</div>
+                        <div class="stat-label">Con Fotografía</div>
+                        <div class="stat-value" style="color: #059669;" id="statWithPhoto">0</div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="stat-pill">
-                    <div class="stat-icon" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">
+                    <div class="stat-icon" style="background: rgba(217, 119, 6, 0.15); color: #d97706;">
                         <i class="bi bi-image"></i>
                     </div>
                     <div>
-                        <div class="small text-muted text-uppercase fw-bold" style="font-size: 0.72rem;">Sin Fotografía</div>
-                        <div class="fs-4 fw-bold text-white" id="statWithoutPhoto">0</div>
+                        <div class="stat-label">Sin Fotografía</div>
+                        <div class="stat-value" style="color: #d97706;" id="statWithoutPhoto">0</div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="stat-pill">
-                    <div class="stat-icon" style="background: rgba(244, 63, 94, 0.15); color: #fb7185;">
+                    <div class="stat-icon" style="background: rgba(220, 38, 38, 0.15); color: #dc2626;">
                         <i class="bi bi-exclamation-triangle-fill"></i>
                     </div>
                     <div>
-                        <div class="small text-muted text-uppercase fw-bold" style="font-size: 0.72rem;">Stock Bajo / Crítico</div>
-                        <div class="fs-4 fw-bold text-white" id="statLowStock">0</div>
+                        <div class="stat-label">Stock Bajo / Crítico</div>
+                        <div class="stat-value" style="color: #dc2626;" id="statLowStock">0</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Buscador y Filtro -->
+        <!-- Buscador de Alta Visibilidad & Filtro de Categoría -->
         <div class="row g-3 mb-4">
             <div class="col-md-8">
-                <div class="input-group">
-                    <span class="input-group-text bg-dark border-secondary text-muted"><i class="bi bi-search"></i></span>
-                    <input type="text" id="searchInput" class="form-control" placeholder="Buscar por nombre, código de barras o descripción...">
+                <div class="search-container">
+                    <i class="bi bi-search search-icon"></i>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Buscar por nombre, código de barras o descripción del producto...">
                 </div>
             </div>
             <div class="col-md-4">
-                <select id="filterCategory" class="form-select">
+                <select id="filterCategory" class="form-select filter-select">
                     <option value="">Todas las Categorías</option>
                 </select>
             </div>
@@ -447,9 +624,9 @@
         <!-- Formulario Desplegable para Agregar Nuevo Producto -->
         <div class="form-section-card" id="formAddProductSection" style="display: none;">
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <h4 class="m-0 fw-bold text-white d-flex align-items-center gap-2">
+                <h4 class="m-0 fw-bold d-flex align-items-center gap-2" style="color: var(--text-title);">
                     <i class="bi bi-plus-square-fill text-primary"></i>
-                    <span>Registrar Nuevo Producto</span>
+                    <span>Registrar Nuevo Producto con Fotografía</span>
                 </h4>
                 <button type="button" class="btn btn-sm btn-outline-secondary" id="btnCloseAddForm">
                     <i class="bi bi-x-lg"></i>
@@ -505,10 +682,10 @@
 
                     <!-- FOTO DEL PRODUCTO -->
                     <div class="col-md-6">
-                        <label for="imagen">Fotografía del Producto (Visualización / Identificación)</label>
+                        <label for="imagen">Fotografía del Producto (Identificación Visual)</label>
                         <input type="file" id="imagen" name="imagen" class="form-control" accept="image/*">
                         <div id="newProductImgPreviewBox" class="mt-2 text-center" style="display: none;">
-                            <img id="newProductImgPreview" src="" alt="Previsualización" style="max-height: 120px; max-width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2);">
+                            <img id="newProductImgPreview" src="" alt="Previsualización" style="max-height: 130px; max-width: 100%; border-radius: 8px; border: 1.5px solid var(--border-card);">
                             <button type="button" class="btn btn-sm btn-outline-danger mt-1 d-block mx-auto" id="btnClearNewProductImg">
                                 <i class="bi bi-x-circle me-1"></i>Quitar foto
                             </button>
@@ -517,7 +694,7 @@
                 </div>
 
                 <div class="d-flex justify-content-end gap-2 mt-4">
-                    <button type="button" class="btn btn-secondary px-4" id="btnCancelAddForm">Cancelar</button>
+                    <button type="button" class="btn btn-secondary px-4 fw-bold" id="btnCancelAddForm">Cancelar</button>
                     <button type="submit" class="btn btn-primary px-5 fw-bold" id="btnSubmitAddProduct">
                         <i class="bi bi-save me-1"></i> Guardar Producto
                     </button>
@@ -528,11 +705,11 @@
 
         <!-- Grid de Tarjetas de Productos -->
         <div id="products-grid" class="products-grid">
-            <div class="text-center py-5 w-100 grid-column-all" style="grid-column: 1 / -1;">
+            <div class="text-center py-5 w-100" style="grid-column: 1 / -1;">
                 <div class="spinner-border text-primary" role="status">
                     <span class="visually-hidden">Cargando...</span>
                 </div>
-                <p class="text-muted mt-2">Cargando catálogo de productos...</p>
+                <p class="text-muted mt-2 fw-bold">Cargando catálogo de productos...</p>
             </div>
         </div>
 
@@ -544,25 +721,25 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title fw-bold" id="photoModalLabel">
-                        <i class="bi bi-camera me-2 text-info"></i>Fotografía de Producto
+                        <i class="bi bi-camera me-2 text-primary"></i>Fotografía de Producto
                     </h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
                         <label class="form-label text-muted small text-uppercase fw-bold">Producto en Inventario:</label>
-                        <div id="modalProductName" class="fw-bold fs-5 text-white"></div>
-                        <div id="modalProductCode" class="small text-info font-monospace"></div>
+                        <div id="modalProductName" class="fw-bold fs-5" style="color: var(--text-title);"></div>
+                        <div id="modalProductCode" class="small text-primary font-monospace fw-bold"></div>
                         <input type="hidden" id="modalProductId">
                     </div>
 
                     <div class="mb-4 text-center">
-                        <label class="form-label d-block text-muted small text-uppercase fw-bold">Foto Actual / Vista Previa</label>
-                        <div id="modalPreviewBox" style="width: 220px; height: 220px; margin: 0 auto; border-radius: 16px; border: 2px dashed rgba(99, 102, 241, 0.4); display: flex; align-items: center; justify-content: center; overflow: hidden; background: #0b1120;">
-                            <img id="modalPreviewImg" src="" style="width: 100%; height: 100%; object-fit: cover; display: none;">
-                            <div id="modalNoImg" class="text-center p-3 text-secondary">
-                                <i class="bi bi-image fs-1 d-block mb-1 text-muted"></i>
-                                <span class="small">Sin fotografía asignada</span>
+                        <label class="form-label d-block text-muted small text-uppercase fw-bold mb-2">Foto Actual / Vista Previa</label>
+                        <div id="modalPreviewBox" style="width: 220px; height: 220px; margin: 0 auto; border-radius: 16px; border: 2px dashed rgba(79, 70, 229, 0.5); display: flex; align-items: center; justify-content: center; overflow: hidden; background: var(--img-bg);">
+                            <img id="modalPreviewImg" src="" style="width: 100%; height: 100%; object-fit: contain; padding: 6px; display: none;">
+                            <div id="modalNoImg" class="text-center p-3">
+                                <i class="bi bi-image fs-1 d-block mb-1 text-primary"></i>
+                                <span class="small fw-bold text-muted">Sin fotografía asignada</span>
                             </div>
                         </div>
                     </div>
@@ -570,13 +747,13 @@
                     <div class="mb-3">
                         <label for="modalPhotoFile" class="form-label fw-bold">Seleccionar Nueva Imagen</label>
                         <input type="file" class="form-control" id="modalPhotoFile" accept="image/*">
-                        <div class="form-text text-muted">Soporta formatos JPG, PNG, WEBP.</div>
+                        <div class="form-text text-muted">Formatos compatibles: JPG, PNG, WEBP.</div>
                     </div>
 
                     <div id="modalPhotoAlert" class="alert d-none py-2"></div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-secondary fw-bold" data-bs-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-primary px-4 fw-bold" id="btnSaveModalPhoto">
                         <i class="bi bi-cloud-arrow-up me-1"></i> Subir y Guardar
                     </button>
@@ -588,7 +765,7 @@
     <!-- Modal para Vista Previa Ampliada de la Foto -->
     <div class="modal fade" id="imagePreviewModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content" style="background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.15);">
+            <div class="modal-content" style="background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(12px); border: 2px solid rgba(255, 255, 255, 0.2);">
                 <div class="modal-header border-0 pb-0">
                     <h5 class="modal-title text-white fw-bold" id="imagePreviewTitle">Visualización de Producto</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
@@ -618,6 +795,33 @@
             const btnToggleAddForm = document.getElementById('btnToggleAddForm');
             const btnCloseAddForm = document.getElementById('btnCloseAddForm');
             const btnCancelAddForm = document.getElementById('btnCancelAddForm');
+
+            // --- Control de Tema Claro / Oscuro (Alta Nitidez) ---
+            const btnThemeToggle = document.getElementById('btnThemeToggle');
+            const themeIcon = document.getElementById('themeIcon');
+            const themeText = document.getElementById('themeText');
+
+            const savedTheme = localStorage.getItem('catalogTheme') || 'light';
+            setTheme(savedTheme);
+
+            function setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('catalogTheme', theme);
+                if (theme === 'dark') {
+                    themeIcon.className = 'bi bi-sun-fill text-warning';
+                    themeText.innerText = 'Modo Claro';
+                } else {
+                    themeIcon.className = 'bi bi-moon-stars-fill text-primary';
+                    themeText.innerText = 'Modo Oscuro';
+                }
+            }
+
+            if (btnThemeToggle) {
+                btnThemeToggle.addEventListener('click', () => {
+                    const currentTheme = document.documentElement.getAttribute('data-theme');
+                    setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+                });
+            }
 
             let allProductsCached = [];
 
@@ -743,8 +947,8 @@
                     productsGrid.innerHTML = `
                         <div class="text-center py-5 w-100" style="grid-column: 1 / -1;">
                             <i class="bi bi-box2 text-muted" style="font-size: 3rem;"></i>
-                            <h5 class="text-white mt-3">No se encontraron productos</h5>
-                            <p class="text-muted">Intenta cambiar los filtros o registra un nuevo producto.</p>
+                            <h5 class="fw-bold mt-3" style="color: var(--text-title);">No se encontraron productos</h5>
+                            <p class="text-muted fw-semibold">Intenta cambiar los filtros o registra un nuevo producto.</p>
                         </div>
                     `;
                     return;
@@ -757,26 +961,26 @@
 
                     const imageUrl = resolveImageUrl(product.imagen);
                     const isLowStock = product.stock_actual <= product.stock_minimo;
-                    const stockBadgeClass = isLowStock ? 'bg-danger text-white' : 'bg-success text-white';
-                    const stockBadgeText = isLowStock ? `Stock Crítico: ${product.stock_actual}` : `Stock: ${product.stock_actual}`;
+                    const stockClass = isLowStock ? 'stock-bad' : 'stock-good';
+                    const stockText = isLowStock ? `Stock Crítico: ${product.stock_actual}` : `Stock: ${product.stock_actual}`;
 
                     let imgContainerHtml = '';
                     if (imageUrl) {
                         imgContainerHtml = `
                             <div class="product-img-wrapper" id="img-wrapper-${product.id}">
                                 <img src="${imageUrl}" alt="${product.nombre}" onclick="showFullScreenImage('${imageUrl}', '${encodeURIComponent(product.nombre)}')">
-                                <span class="stock-badge-tag ${stockBadgeClass}">${stockBadgeText}</span>
-                                <div class="zoom-overlay"><i class="bi bi-arrows-fullscreen"></i> Ver</div>
+                                <span class="stock-badge-tag ${stockClass}">${stockText}</span>
+                                <div class="zoom-overlay"><i class="bi bi-arrows-fullscreen"></i> Ampliar</div>
                             </div>
                         `;
                     } else {
                         imgContainerHtml = `
                             <div class="product-img-wrapper" id="img-wrapper-${product.id}">
-                                <div class="product-no-img">
-                                    <i class="bi bi-image"></i>
+                                <div class="product-no-img-box">
+                                    <i class="bi bi-camera"></i>
                                     <span>Sin fotografía</span>
                                 </div>
-                                <span class="stock-badge-tag ${stockBadgeClass}">${stockBadgeText}</span>
+                                <span class="stock-badge-tag ${stockClass}">${stockText}</span>
                             </div>
                         `;
                     }
@@ -792,12 +996,12 @@
                             <p class="product-desc">${product.descripcion || 'Sin descripción detallada.'}</p>
                             
                             <div class="product-meta-row">
-                                <span><i class="bi bi-tag me-1"></i>${product.categoria_nombre || 'General'}</span>
-                                <span><i class="bi bi-truck me-1"></i>${product.proveedor_nombre || 'General'}</span>
+                                <span><i class="bi bi-tag me-1 text-primary"></i>${product.categoria_nombre || 'General'}</span>
+                                <span><i class="bi bi-truck me-1 text-primary"></i>${product.proveedor_nombre || 'General'}</span>
                             </div>
 
                             <div class="product-price-box">
-                                <span class="text-muted small">Precio Venta:</span>
+                                <span class="text-muted small fw-bold">Precio Venta:</span>
                                 <span class="product-price-val">$${parseFloat(product.precio_venta || 0).toLocaleString('es-CO')}</span>
                             </div>
 
@@ -856,7 +1060,7 @@
                     console.error('Error al cargar productos:', error);
                     productsGrid.innerHTML = `
                         <div class="text-center py-5 w-100" style="grid-column: 1 / -1;">
-                            <div class="alert alert-danger d-inline-block">
+                            <div class="alert alert-danger d-inline-block fw-bold">
                                 Error al cargar catálogo de productos: ${error.message}
                             </div>
                         </div>
@@ -907,7 +1111,7 @@
 
                     if (response.ok) {
                         formMessage.textContent = '¡Producto registrado exitosamente!';
-                        formMessage.className = 'alert alert-success mt-3';
+                        formMessage.className = 'alert alert-success mt-3 fw-bold';
                         formMessage.style.display = 'block';
 
                         addProductForm.reset();
@@ -927,7 +1131,7 @@
                 } catch (error) {
                     console.error('Error al agregar producto:', error);
                     formMessage.textContent = `Error: ${error.message}`;
-                    formMessage.className = 'alert alert-danger mt-3';
+                    formMessage.className = 'alert alert-danger mt-3 fw-bold';
                     formMessage.style.display = 'block';
                 } finally {
                     btnSubmit.disabled = false;
@@ -1000,7 +1204,7 @@
                 const alertBox = document.getElementById('modalPhotoAlert');
 
                 if (!fileInput.files || fileInput.files.length === 0) {
-                    alertBox.className = 'alert alert-warning py-2';
+                    alertBox.className = 'alert alert-warning py-2 fw-bold';
                     alertBox.innerText = 'Por favor selecciona un archivo de imagen.';
                     return;
                 }
@@ -1042,7 +1246,7 @@
 
                     if (response.ok) {
                         const updatedProduct = await response.json();
-                        alertBox.className = 'alert alert-success py-2';
+                        alertBox.className = 'alert alert-success py-2 fw-bold';
                         alertBox.innerText = '¡Fotografía actualizada con éxito!';
 
                         // Actualizar inmediatamente la tarjeta en el DOM sin recargar la página
@@ -1055,14 +1259,14 @@
 
                         if (imgWrapper && newImgUrl) {
                             const isLow = updatedProduct.stock_actual <= updatedProduct.stock_minimo;
-                            const badgeClass = isLow ? 'bg-danger text-white' : 'bg-success text-white';
+                            const badgeClass = isLow ? 'stock-bad' : 'stock-good';
                             const badgeText = isLow ? `Stock Crítico: ${updatedProduct.stock_actual}` : `Stock: ${updatedProduct.stock_actual}`;
                             const encNombre = encodeURIComponent(updatedProduct.nombre);
 
                             imgWrapper.innerHTML = `
                                 <img src="${newImgUrl}" alt="${updatedProduct.nombre}" onclick="showFullScreenImage('${newImgUrl}', '${encNombre}')">
                                 <span class="stock-badge-tag ${badgeClass}">${badgeText}</span>
-                                <div class="zoom-overlay"><i class="bi bi-arrows-fullscreen"></i> Ver</div>
+                                <div class="zoom-overlay"><i class="bi bi-arrows-fullscreen"></i> Ampliar</div>
                             `;
                         }
 
@@ -1082,7 +1286,7 @@
                     }
                 } catch (error) {
                     console.error('Error al guardar foto:', error);
-                    alertBox.className = 'alert alert-danger py-2';
+                    alertBox.className = 'alert alert-danger py-2 fw-bold';
                     alertBox.innerText = `Error al guardar: ${error.message}`;
                 } finally {
                     btnSaveModalPhoto.disabled = false;
