@@ -275,7 +275,6 @@
 <script>
 (function () {
     const MOBILE_API = '/mobile-api/';
-    const SESSION_KEY = 'inbotfChatSessionId';
 
     const panel = document.getElementById('inbotf-chat-panel');
     const toggle = document.getElementById('inbotf-chat-toggle');
@@ -288,8 +287,32 @@
     const imageBtn = document.getElementById('inbotf-chat-image-btn');
     const typingEl = document.getElementById('inbotf-chat-typing');
 
-    let sessionId = sessionStorage.getItem(SESSION_KEY);
+    let sessionId = null;
     let initializing = false;
+
+    function getSessionKey() {
+        const username = localStorage.getItem('username') || 'global';
+        return 'inbotfChatSessionId_' + username;
+    }
+
+    function getStoredSessionId() {
+        return sessionStorage.getItem(getSessionKey());
+    }
+
+    function setStoredSessionId(id) {
+        if (id) {
+            sessionStorage.setItem(getSessionKey(), String(id));
+        } else {
+            sessionStorage.removeItem(getSessionKey());
+        }
+        // Limpiar clave legada si existe
+        sessionStorage.removeItem('inbotfChatSessionId');
+    }
+
+    function clearSessionState() {
+        setStoredSessionId(null);
+        sessionId = null;
+    }
 
     function getToken() {
         return localStorage.getItem('authToken');
@@ -345,14 +368,19 @@
                 const err = await response.json();
                 detail = err.detail || err.error || JSON.stringify(err);
             } catch (e) { /* ignore */ }
-            throw new Error(detail);
+            const errObj = new Error(detail);
+            errObj.status = response.status;
+            throw errObj;
         }
         return response.json();
     }
 
-    async function ensureSession() {
-        if (sessionId) {
-            return sessionId;
+    async function ensureSession(forceNew = false) {
+        if (!forceNew) {
+            sessionId = getStoredSessionId();
+            if (sessionId) {
+                return sessionId;
+            }
         }
         if (initializing) {
             return null;
@@ -361,7 +389,7 @@
         try {
             const data = await mobileFetch('chat/sessions/iniciar/', { method: 'POST' });
             sessionId = data.session.id;
-            sessionStorage.setItem(SESSION_KEY, String(sessionId));
+            setStoredSessionId(sessionId);
             renderHistory(data.session.mensajes || []);
             return sessionId;
         } finally {
@@ -370,26 +398,49 @@
     }
 
     async function loadSessionHistory() {
+        sessionId = getStoredSessionId();
         if (!sessionId) {
             return ensureSession();
         }
-        const data = await mobileFetch('chat/sessions/' + sessionId + '/');
-        renderHistory(data.mensajes || []);
-        return sessionId;
+        try {
+            const data = await mobileFetch('chat/sessions/' + sessionId + '/');
+            renderHistory(data.mensajes || []);
+            return sessionId;
+        } catch (err) {
+            console.warn('Sesión previa no encontrada o pertenece a otro usuario. Auto-recuperando...', err);
+            clearSessionState();
+            return ensureSession(true);
+        }
     }
 
     async function sendText(text) {
-        const id = await ensureSession();
+        let id = await ensureSession();
         if (!id) return;
         appendMessage('user', text);
         typingEl.style.display = 'block';
         sendBtn.disabled = true;
         try {
-            const data = await mobileFetch('chat/sessions/' + id + '/mensaje/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ texto: text }),
-            });
+            let data;
+            try {
+                data = await mobileFetch('chat/sessions/' + id + '/mensaje/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ texto: text }),
+                });
+            } catch (err) {
+                if (err.status === 404 || (err.message && err.message.toLowerCase().includes('chatsession'))) {
+                    console.warn('ID de sesión no coincide en backend. Re-creando sesión y reintentando...');
+                    clearSessionState();
+                    id = await ensureSession(true);
+                    data = await mobileFetch('chat/sessions/' + id + '/mensaje/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ texto: text }),
+                    });
+                } else {
+                    throw err;
+                }
+            }
             appendMessage('bot', data.bot_message.texto);
         } finally {
             typingEl.style.display = 'none';
@@ -398,7 +449,7 @@
     }
 
     async function sendImage(file) {
-        const id = await ensureSession();
+        let id = await ensureSession();
         if (!id || !file) return;
         appendMessage('user', '[Foto enviada]');
         typingEl.style.display = 'block';
@@ -406,10 +457,25 @@
         try {
             const body = new FormData();
             body.append('imagen', file);
-            const data = await mobileFetch('chat/sessions/' + id + '/mensaje/', {
-                method: 'POST',
-                body: body,
-            });
+            let data;
+            try {
+                data = await mobileFetch('chat/sessions/' + id + '/mensaje/', {
+                    method: 'POST',
+                    body: body,
+                });
+            } catch (err) {
+                if (err.status === 404 || (err.message && err.message.toLowerCase().includes('chatsession'))) {
+                    console.warn('ID de sesión no coincide en backend. Re-creando sesión para imagen...');
+                    clearSessionState();
+                    id = await ensureSession(true);
+                    data = await mobileFetch('chat/sessions/' + id + '/mensaje/', {
+                        method: 'POST',
+                        body: body,
+                    });
+                } else {
+                    throw err;
+                }
+            }
             appendMessage('bot', data.bot_message.texto);
         } finally {
             typingEl.style.display = 'none';
@@ -492,8 +558,12 @@
         open: openChat,
         close: closeChat,
         reset: function () {
-            sessionStorage.removeItem(SESSION_KEY);
-            sessionId = null;
+            clearSessionState();
+            Object.keys(sessionStorage).forEach(function (k) {
+                if (k.startsWith('inbotfChatSessionId')) {
+                    sessionStorage.removeItem(k);
+                }
+            });
             messagesEl.innerHTML = '';
         },
     };
